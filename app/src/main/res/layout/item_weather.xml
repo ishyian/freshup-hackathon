@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/weather_layout"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:gravity="center_horizontal"
+    android:orientation="vertical">
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/weather_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/padding_6"
+        android:fontFamily="sans-serif"
+        android:gravity="center"
+        android:textSize="@dimen/text_size_14"
+        tools:text="3pm" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/weather_temp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="sans-serif"
+        android:gravity="center"
+        android:text="@string/temp_value"
+        android:textColor="@color/text_primary"
+        android:textSize="@dimen/text_size_18"
+        tools:textColor="@color/black" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/weather_icon"
+        app:tint="@color/text_primary"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/padding_8"
+        android:fontFamily="sans-serif"
+        android:gravity="center"
+        android:src="@drawable/ic_01d" />
+
+</androidx.appcompat.widget.LinearLayoutCompat>

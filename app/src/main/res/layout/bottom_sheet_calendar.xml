@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/time_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:background="@drawable/bottom_sheet_rounded"
+        android:orientation="vertical"
+        app:behavior_hideable="true"
+        app:behavior_peekHeight="0dp"
+        app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior">
+
+        <include
+            layout="@layout/view_notch"
+            android:layout_width="@dimen/notch_width"
+            android:layout_height="@dimen/notch_height"
+            android:layout_marginTop="@dimen/padding_8"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.prolificinteractive.materialcalendarview.MaterialCalendarView
+            android:id="@+id/time_calendar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/padding_10"
+            android:background="@null"
+            android:clipChildren="true"
+            app:layout_constraintBottom_toTopOf="@+id/today"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/notch_view"
+            app:mcv_dateTextAppearance="@style/CalendarDate"
+            app:mcv_firstDayOfWeek="monday"
+            app:mcv_headerTextAppearance="@style/CalendarHeader"
+            app:mcv_selectionColor="@color/colorAccent"
+            app:mcv_selectionMode="multiple"
+            app:mcv_showOtherDates="other_months|decorated_disabled"
+            app:mcv_tileSize="@dimen/calendar_tile_height"
+            app:mcv_weekDayTextAppearance="@style/CalendarWeekDay" />
+
+        <FrameLayout
+            android:id="@+id/today"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/button_normal_height"
+            android:layout_marginStart="@dimen/padding_16"
+            android:layout_marginTop="@dimen/padding_19"
+            android:background="@drawable/quantity_background"
+            app:layout_constraintEnd_toStartOf="@+id/tomorrow"
+            app:layout_constraintHorizontal_weight="3"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/time_calendar">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/today_text"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:elevation="0dp"
+                android:fontFamily="sans-serif"
+                android:text="@string/today_button"
+                android:textAllCaps="false"
+                android:textColor="@color/text_primary"
+                android:textSize="@dimen/text_size_12"
+                app:cornerRadius="20dp" />
+
+        </FrameLayout>
+
+        <FrameLayout
+            android:id="@+id/tomorrow"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/button_normal_height"
+            android:layout_marginStart="@dimen/padding_8"
+            android:layout_marginTop="@dimen/padding_19"
+            android:layout_marginEnd="@dimen/padding_8"
+            android:background="@drawable/quantity_background"
+            app:layout_constraintEnd_toStartOf="@+id/weekend"
+            app:layout_constraintHorizontal_weight="3"
+            app:layout_constraintStart_toEndOf="@+id/today"
+            app:layout_constraintTop_toBottomOf="@+id/time_calendar">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tomorrow_text"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:elevation="0dp"
+                android:fontFamily="sans-serif"
+                android:text="@string/tomorrow_button"
+                android:textAllCaps="false"
+                android:textColor="@color/text_primary"
+                android:textSize="@dimen/text_size_12"
+                app:cornerRadius="20dp" />
+
+        </FrameLayout>
+
+        <FrameLayout
+            android:id="@+id/weekend"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/button_normal_height"
+            android:layout_marginTop="@dimen/padding_19"
+            android:layout_marginEnd="@dimen/padding_16"
+            android:background="@drawable/quantity_background"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/tomorrow"
+            app:layout_constraintHorizontal_weight="3"
+            app:layout_constraintTop_toBottomOf="@+id/time_calendar">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/weekend_text"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:elevation="0dp"
+                android:fontFamily="sans-serif"
+                android:text="@string/weekend_button"
+                android:textAllCaps="false"
+                android:textColor="@color/text_primary"
+                android:textSize="@dimen/text_size_12"
+                app:cornerRadius="20dp" />
+
+        </FrameLayout>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/apply_button"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/button_normal_height"
+            android:layout_marginStart="@dimen/padding_16"
+            android:layout_marginTop="@dimen/padding_19"
+            android:layout_marginEnd="@dimen/padding_16"
+            android:layout_marginBottom="@dimen/padding_19"
+            android:backgroundTint="@color/green_color"
+            android:fontFamily="sans-serif"
+            android:insetTop="0dp"
+            android:insetBottom="0dp"
+            android:text="@string/apply"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textSize="@dimen/text_size_16"
+            app:cornerRadius="20dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/today" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

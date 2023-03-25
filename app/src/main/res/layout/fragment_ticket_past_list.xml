@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <import type="android.view.View" />
+        <variable
+            name="viewModel"
+            type="com.melitopolcherry.hackathon.features.orderpast.OrdersPastViewModel" />
+    </data>
+
+    <RelativeLayout
+        android:id="@+id/past_main"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fitsSystemWindows="true"
+        android:background="@color/background_primary"
+        android:clickable="true"
+        android:focusable="true">
+
+        <FrameLayout
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/actionbar_title"
+                style="@style/TitleToolbar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="@string/past_tickets" />
+
+            <androidx.appcompat.widget.AppCompatImageButton
+                android:id="@+id/close_button"
+                android:layout_width="@dimen/button_normal_height"
+                android:layout_height="@dimen/button_normal_height"
+                android:layout_gravity="end|center_vertical"
+                android:layout_marginEnd="@dimen/padding_16"
+                android:background="@drawable/ripple_effect"
+                android:src="@drawable/ic_close_black"
+                android:tint="@color/text_primary" />
+
+        </FrameLayout>
+
+        <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+            android:id="@+id/swipe_to_refresh"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@+id/load_more_view"
+            android:layout_below="@+id/toolbar">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/tickets_recycler_view"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:visibility="@{viewModel.isLoading ? View.INVISIBLE : View.VISIBLE}"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                app:layout_scrollFlags="scroll|snap"
+                tools:listitem="@layout/item_ticket" />
+
+        </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+        <include layout="@layout/empty_state_orders_past"
+            android:id="@+id/no_past_tickets_layout"
+            android:layout_alignTop="@+id/swipe_to_refresh"
+            android:layout_alignBottom="@+id/swipe_to_refresh"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <include
+            android:id="@+id/unlogined_state"
+            layout="@layout/unlogined_state_tickets"
+            android:layout_width="match_parent"
+            android:layout_alignTop="@+id/swipe_to_refresh"
+            android:layout_alignBottom="@+id/swipe_to_refresh"
+            android:layout_gravity="center"
+            android:layout_height="wrap_content" />
+
+        <androidx.core.widget.ContentLoadingProgressBar
+            android:id="@+id/load_more_view"
+            style="?android:attr/progressBarStyleSmall"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_gravity="center|bottom"
+            android:indeterminate="true"
+            android:padding="@dimen/padding_10"
+            android:visibility="@{viewModel.isLoadingMore ? View.VISIBLE : View.GONE}"
+            tools:background="@color/transparent"
+            tools:visibility="visible" />
+
+        <androidx.core.widget.ContentLoadingProgressBar
+            android:id="@+id/loading_view"
+            style="?android:attr/progressBarStyleLarge"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:layout_gravity="center"
+            android:indeterminate="true"
+            android:visibility="@{viewModel.isLoading ? View.VISIBLE : View.INVISIBLE}"
+            tools:background="@color/transparent"
+            tools:visibility="visible" />
+
+    </RelativeLayout>
+</layout>

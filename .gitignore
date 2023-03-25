@@ -1,0 +1,11 @@
+# Created by .ignore support plugin (hsz.mobi)
+/app/app.iml
+/data/build/
+/app/build/
+/domain/build/
+/data/data.iml
+/domain/domain.iml
+/.idea/
+/.idea/libraries/
+/.gradle/
+/app/release/

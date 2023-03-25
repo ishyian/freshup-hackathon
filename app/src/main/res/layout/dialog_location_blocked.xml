@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <RelativeLayout
+        android:id="@+id/permission_blocked_dialog_main"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fitsSystemWindows="true"
+        android:gravity="center"
+        android:background="@color/background_primary"
+        android:orientation="vertical">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/dialog_image"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:src="@drawable/permission_location_blocked"
+            tools:ignore="ContentDescription" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/dialog_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/dialog_image"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/padding_32"
+            android:fontFamily="sans-serif"
+            android:gravity="center"
+            android:text="@string/no_access_to_location"
+            android:textColor="@color/text_primary"
+            android:textSize="@dimen/text_size_18" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/dialog_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/dialog_title"
+            android:layout_centerHorizontal="true"
+            android:layout_marginStart="@dimen/padding_16"
+            android:layout_marginTop="@dimen/padding_10"
+            android:layout_marginEnd="@dimen/padding_16"
+            android:fontFamily="sans-serif"
+            android:gravity="center"
+            android:text="@string/we_don_t_have_access_to_your_calendar_you_can_enable_access_in_privacy_settings"
+            android:textColor="@color/text_secondary"
+            android:textSize="@dimen/text_size_16" />
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/dialog_text"
+            android:layout_marginTop="@dimen/padding_22"
+            android:clipChildren="false"
+            android:clipToPadding="false"
+            android:orientation="horizontal"
+            android:weightSum="1">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/allow_dialog_button"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/button_normal_height"
+                android:layout_gravity="center"
+                android:layout_marginStart="@dimen/padding_16"
+                android:layout_marginTop="@dimen/padding_8"
+                android:layout_marginEnd="@dimen/padding_8"
+                android:layout_marginBottom="@dimen/padding_8"
+                android:layout_weight="0.5"
+                android:backgroundTint="@color/colorAccent"
+                android:fontFamily="sans-serif"
+                android:gravity="center"
+                android:insetTop="0dp"
+                android:insetBottom="0dp"
+                android:padding="0dp"
+                android:text="@string/open_privacy_settings_button_text"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textSize="@dimen/text_size_12"
+                app:cornerRadius="18dp" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/close_dialog_button"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/button_normal_height"
+                android:layout_gravity="center"
+                android:layout_marginStart="@dimen/padding_18"
+                android:layout_marginEnd="@dimen/padding_16"
+                android:layout_weight="0.5"
+                android:backgroundTint="@color/transparent"
+                android:fontFamily="sans-serif"
+                android:gravity="center"
+                android:insetTop="0dp"
+                android:insetBottom="0dp"
+                android:padding="0dp"
+                android:text="@string/maybe_later_button_text"
+                android:textAllCaps="false"
+                android:textColor="@color/text_primary"
+                android:textSize="@dimen/text_size_12"
+                app:cornerRadius="18dp"
+                app:strokeColor="@color/separator" />
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+    </RelativeLayout>
+</layout>

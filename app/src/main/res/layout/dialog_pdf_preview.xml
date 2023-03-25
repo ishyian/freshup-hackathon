@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <RelativeLayout
+        android:id="@+id/dialog_main"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="@dimen/padding_16">
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:backgroundTint="@color/pdf_view_background"
+            android:clipToPadding="false"
+            app:cardCornerRadius="@dimen/padding_16">
+
+            <com.github.barteksc.pdfviewer.PDFView
+                android:id="@+id/pdf_view"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:layout_marginStart="@dimen/padding_4"
+                android:layout_marginTop="@dimen/padding_100"
+                android:layout_marginEnd="@dimen/padding_4"
+                android:layout_marginBottom="@dimen/padding_100"
+                android:elevation="4dp"
+                android:outlineProvider="bounds" />
+
+            <ImageButton
+                android:id="@+id/close_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/padding_16"
+                android:layout_marginTop="@dimen/padding_16"
+                android:background="@drawable/back_button_pdf"
+                android:foreground="@drawable/ripple_effect"
+                android:padding="@dimen/padding_8"
+                app:tint="@color/black"
+                android:src="@drawable/ic_close_black"
+                tools:ignore="ContentDescription" />
+
+        </androidx.cardview.widget.CardView>
+
+    </RelativeLayout>
+</layout>

@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="viewModel"
+            type="com.melitopolcherry.hackathon.features.venue.LandingPageVenueViewModel" />
+    </data>
+
+    <FrameLayout
+        android:id="@+id/venue_main"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fitsSystemWindows="true"
+        android:background="@color/background_primary">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/venue_page_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:visibility="invisible"
+            tools:background="@color/white"
+            tools:context=".features.venue.LandingPageVenueActivity"
+            tools:visibility="visible">
+
+            <include
+                android:id="@+id/back_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/padding_16"
+                app:layout_constraintBottom_toBottomOf="@+id/venue_address"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/venue_name"
+                layout="@layout/back_button" />
+
+            <androidx.appcompat.widget.AppCompatImageButton
+                android:id="@+id/track_button"
+                android:layout_width="@dimen/button_normal_height"
+                android:layout_height="@dimen/button_normal_height"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:layout_marginEnd="@dimen/padding_16"
+                android:background="@drawable/track_button_background_selector"
+                android:foreground="@drawable/ripple_effect"
+                android:padding="@dimen/padding_4"
+                android:src="@drawable/track_button_selector"
+                android:textAlignment="center"
+                app:layout_constraintBottom_toBottomOf="@+id/venue_address"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/venue_name"
+                tools:ignore="ContentDescription" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/venue_name"
+                style="@style/DetailsTitle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/padding_12"
+                android:layout_marginTop="@dimen/padding_8"
+                android:layout_marginEnd="@dimen/padding_12"
+                android:layout_marginBottom="@dimen/padding_8"
+                android:transitionName="event_date"
+                app:layout_constraintEnd_toStartOf="@+id/track_button"
+                app:layout_constraintStart_toEndOf="@+id/back_button"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="Event name" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/venue_address"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/padding_12"
+                android:layout_marginEnd="@dimen/padding_12"
+                android:layout_marginBottom="@dimen/padding_8"
+                android:layout_toStartOf="@id/track_button"
+                android:fontFamily="sans-serif"
+                android:textColor="@color/text_secondary"
+                android:textSize="@dimen/text_size_16"
+                android:transitionName="event_date"
+                app:layout_constraintEnd_toStartOf="@+id/track_button"
+                app:layout_constraintStart_toEndOf="@+id/back_button"
+                app:layout_constraintTop_toBottomOf="@+id/venue_name"
+                tools:text="Event address"
+                tools:textColor="@color/black" />
+
+            <View
+                android:id="@+id/line_separator"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginStart="@dimen/padding_16"
+                android:layout_marginTop="@dimen/padding_8"
+                android:layout_marginEnd="@dimen/padding_16"
+                android:paddingBottom="@dimen/padding_8"
+                android:background="@color/separator"
+                app:layout_constraintTop_toBottomOf="@+id/venue_address" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/venue_image"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_gravity="top|center_vertical"
+                android:adjustViewBounds="true"
+                android:scaleType="fitXY"
+                android:focusableInTouchMode="true"
+                app:layout_constraintDimensionRatio="H,16:9"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/line_separator"
+                tools:ignore="ContentDescription"
+                tools:src="@drawable/placeholder_performer" />
+
+            <androidx.core.widget.NestedScrollView
+                android:id="@+id/scroll_view"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                app:layout_behavior="@string/appbar_scrolling_view_behavior"
+                app:layout_collapseMode="none"
+                app:layout_constraintBottom_toTopOf="@+id/loading_more"
+                app:layout_constraintTop_toBottomOf="@+id/line_separator">
+
+                <RelativeLayout
+                    android:id="@+id/nested_container"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/background_primary">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/upcoming_events"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/padding_16"
+                        android:layout_marginTop="@dimen/padding_12"
+                        android:layout_marginEnd="@dimen/padding_16"
+                        android:layout_marginBottom="@dimen/padding_4"
+                        android:fontFamily="sans-serif"
+                        android:text="All events"
+                        android:textColor="@color/text_primary"
+                        android:textSize="@dimen/text_size_16"
+                        android:visibility="gone"
+                        tools:textColor="@color/black" />
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/landing_page_recycler"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_below="@+id/upcoming_events"
+                        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+                        tools:listitem="@layout/item_landing_page" />
+
+                </RelativeLayout>
+            </androidx.core.widget.NestedScrollView>
+
+            <include
+                android:id="@+id/empty_state_layout"
+                layout="@layout/empty_state_landing_page"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/scroll_view" />
+
+            <androidx.core.widget.ContentLoadingProgressBar
+                android:id="@+id/loading_more"
+                style="?android:attr/progressBarStyleSmall"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:indeterminate="true"
+                android:padding="@dimen/padding_10"
+                android:visibility="@{viewModel.isLoadingMore ? View.VISIBLE : View.GONE}"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/scroll_view"
+                tools:background="@color/transparent"
+                tools:visibility="visible" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.core.widget.ContentLoadingProgressBar
+            style="?android:attr/progressBarStyleLarge"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:indeterminate="true"
+            android:visibility="@{viewModel.isLoading ? View.VISIBLE : View.INVISIBLE}"
+            tools:background="@color/transparent"
+            tools:visibility="visible" />
+    </FrameLayout>
+</layout>

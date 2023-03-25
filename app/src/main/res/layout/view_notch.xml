@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<View xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/notch_view"
+    android:layout_width="@dimen/notch_width"
+    android:layout_height="@dimen/notch_height"
+    android:layout_alignParentTop="true"
+    android:layout_centerHorizontal="true"
+    android:layout_gravity="top|center_horizontal"
+    android:layout_marginTop="@dimen/padding_10"
+    android:layout_marginBottom="@dimen/padding_10"
+    android:background="@drawable/notch_background"
+    android:contentDescription="@string/app_name"
+    android:gravity="center"
+    android:scaleType="centerInside" />

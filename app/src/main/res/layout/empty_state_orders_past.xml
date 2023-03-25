@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:visibility="gone"
+    tools:ignore="UseCompoundDrawables"
+    tools:visibility="visible"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/no_past_tickets_image"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:src="@drawable/ilustrations_no_tickets_by_criteria"
+        tools:ignore="ContentDescription" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/no_past_tickets_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/padding_16"
+        android:fontFamily="sans-serif"
+        android:gravity="center"
+        android:text="@string/you_have_no_tickets_for_n_any_past_event"
+        android:textAlignment="center"
+        android:textColor="@color/text_primary"
+        android:textSize="@dimen/text_size_18" />
+
+</androidx.appcompat.widget.LinearLayoutCompat>

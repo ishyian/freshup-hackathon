@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/quantity_back"
+    android:foreground="@drawable/ripple_effect"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="@dimen/padding_16"
+    android:layout_marginEnd="@dimen/padding_8"
+    android:background="@drawable/quantity_selector">
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/quantity_num"
+        android:layout_width="@dimen/quantity_size"
+        android:layout_height="@dimen/quantity_size"
+        android:layout_gravity="center"
+        android:fontFamily="sans-serif"
+        android:gravity="center"
+        android:textSize="@dimen/text_size_14"
+        tools:text="1"
+        android:textColor="@color/text_secondary" />
+
+</FrameLayout>

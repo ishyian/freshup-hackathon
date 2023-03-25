@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="viewModel"
+            type="com.melitopolcherry.hackathon.features.bottom.ChangePhoneViewModel" />
+    </data>
+
+    <RelativeLayout
+        android:id="@+id/bottom_sheet_user_info"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:background="@drawable/bottom_sheet_rounded"
+        android:orientation="vertical"
+        app:behavior_hideable="true"
+        app:behavior_peekHeight="0dp"
+        app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior">
+
+        <include
+            android:id="@+id/bottom_sheet_slide_button"
+            layout="@layout/view_notch" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/title_phone_text_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/bottom_sheet_slide_button"
+            android:layout_marginStart="@dimen/padding_16"
+            android:layout_marginTop="@dimen/padding_12"
+            android:layout_marginEnd="@dimen/padding_16"
+            android:fontFamily="sans-serif"
+            android:textColor="@color/text_primary"
+            android:text="@string/payment_label_phone_number"
+            android:textSize="@dimen/text_size_14"
+            tools:textColor="@color/gray_color" />
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/phone_edit_text"
+            android:textColor="@color/text_primary"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/title_phone_text_view"
+            android:layout_marginStart="@dimen/padding_16"
+            android:layout_marginTop="@dimen/padding_4"
+            android:layout_marginEnd="@dimen/padding_16"
+            android:layout_marginBottom="@dimen/padding_4"
+            android:layout_toStartOf="@+id/change_phone_button"
+            android:background="@android:color/transparent"
+            android:digits="0123456789"
+            android:fontFamily="sans-serif-light"
+            android:hint="@string/payment_hint_phone"
+            android:imeOptions="actionDone"
+            android:inputType="phone"
+            android:lines="1"
+            android:maxLength="15"
+            android:maxLines="1"
+            android:textColorHint="@color/text_secondary"
+            android:textSize="@dimen/text_size_14" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/change_phone_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/title_phone_text_view"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="@dimen/padding_16"
+            android:fontFamily="sans-serif"
+            android:paddingStart="0dp"
+            android:paddingTop="@dimen/padding_4"
+            android:paddingEnd="@dimen/padding_4"
+            android:paddingBottom="@dimen/padding_4"
+            android:text="@string/payment_button_send_sms"
+            android:textColor="@color/colorAccent"
+            android:textSize="@dimen/text_size_14" />
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/phone_code_edit_text"
+            android:layout_width="match_parent"
+            android:textColor="@color/text_primary"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/phone_edit_text"
+            android:layout_marginStart="@dimen/padding_16"
+            android:layout_marginTop="@dimen/padding_4"
+            android:layout_marginEnd="@dimen/padding_8"
+            android:layout_marginBottom="@dimen/padding_8"
+            android:layout_toStartOf="@+id/change_phone_button"
+            android:background="@android:color/transparent"
+            android:fontFamily="sans-serif"
+            android:hint="@string/payment_button_sms_code"
+            android:imeOptions="actionDone"
+            android:inputType="phone"
+            android:lines="1"
+            android:maxLength="10"
+            android:maxLines="1"
+            android:textColorHint="@color/text_secondary"
+            android:textSize="@dimen/text_size_14"
+            android:visibility="gone" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/save_button"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/button_normal_height"
+            android:layout_below="@+id/phone_code_edit_text"
+            android:layout_gravity="bottom|center"
+            android:layout_marginStart="@dimen/padding_16"
+            android:layout_marginTop="@dimen/padding_22"
+            android:layout_marginEnd="@dimen/padding_16"
+            android:layout_marginBottom="@dimen/padding_22"
+            android:fontFamily="sans-serif"
+            android:insetTop="0dp"
+            android:insetBottom="0dp"
+            android:text="@string/save_button_text"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textSize="@dimen/text_size_16"
+            app:cornerRadius="20dp" />
+
+        <androidx.core.widget.ContentLoadingProgressBar
+            android:id="@+id/loading_view"
+            style="?android:attr/progressBarStyleLarge"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:layout_gravity="center"
+            android:indeterminate="true"
+            android:visibility="@{viewModel.isLoading ? View.VISIBLE : View.INVISIBLE}"
+            tools:background="@color/transparent"
+            tools:visibility="visible" />
+
+    </RelativeLayout>
+</layout>

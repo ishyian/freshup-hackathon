@@ -1,0 +1,792 @@
+[
+  {
+    "subjectName": "Організація та обробка електронної інформації",
+    "teacherName": "Мандарин Кирило Матвійович",
+    "group": "322і",
+    "startDate": "06-03-2023 8:00",
+    "endDate": "06-03-2023 9:10",
+    "classroom": 312,
+    "type": "lectures",
+    "facultyId": "fac1"
+  },
+  {
+    "subjectName": "Програмування з навчальною практикою",
+    "teacherName": "Цибуленко Оксана Іванівна",
+    "group": "322і",
+    "startDate": "06-03-2023 9:25",
+    "endDate": "06-03-2023 10:35",
+    "classroom": 111,
+    "type": "practices",
+    "facultyId": "fac1"
+  },
+  {
+    "subjectName": "Математичний аналіз",
+    "teacherName": "Гарбузенко Сергій Михайлович",
+    "group": "322і",
+    "startDate": "07-03-2023 8:00",
+    "endDate": "07-03-2023 9:10",
+    "classroom": 453,
+    "type": "laboratories",
+    "facultyId": "fac1"
+  },
+  {
+    "subjectName": "Фізичне виховання",
+    "teacherName": "Картопленко Ярослав Миколайович",
+    "group": "322і",
+    "startDate": "07-03-2023 9:25",
+    "endDate": "07-03-2023 10:35",
+    "classroom": "Спортзал",
+    "type": "practices",
+    "facultyId": "fac4"
+  },
+  {
+    "subjectName": "Філософія",
+    "teacherName": "Селеренко Ігор Микитович",
+    "group": "322і",
+    "startDate": "08-03-2023 8:00",
+    "endDate": "08-03-2023 9:10",
+    "classroom": 333,
+    "type": "laboratories",
+    "facultyId": "fac4"
+  },
+  {
+    "subjectName": "Дискретна математика",
+    "teacherName": "Квасоленко Денис Павлович",
+    "group": "322і",
+    "startDate": "08-03-2023 9:25",
+    "endDate": "08-03-2023 10:35",
+    "classroom": 230,
+    "type": "lectures",
+    "facultyId": "fac1"
+  },
+  {
+    "subjectName": "Програмування з навчальною практикою",
+    "teacherName": "Цибуленко Оксана Іванівна",
+    "group": "322і",
+    "startDate": "08-03-2023 10:50",
+    "endDate": "08-03-2023 12:00",
+    "classroom": 111,
+    "type": "lectures",
+    "facultyId": "fac1"
+  },
+  {
+    "subjectName": "Організаційно-виховна година",
+    "teacherName": "Маруленко Ганна Миколаївна",
+    "group": "322і",
+    "startDate": "08-03-2023 12:15",
+    "endDate": "06-03-2023 13:25",
+    "classroom": 120,
+    "type": "lectures",
+    "facultyId": "fac1"
+  },
+  {
+    "subjectName": "Ділове адміністрування з КР М1.Управління якістю",
+    "teacherName": "Броколенко Петро Олексійович",
+    "group": "419i",
+    "startDate": "06-03-2023 9:25",
+    "endDate": "06-03-2023 10:35",
+    "classroom": 400,
+    "type": "lectures",
+    "facultyId": "fac1"
+  },
+  {
+    "subjectName": "Ділове адміністрування з КР М1.Управління якістю",
+    "teacherName": "Броколенко Петро Олексійович",
+    "group": "419i",
+    "startDate": "07-03-2023 8:00",
+    "endDate": "07-03-2023 9:10",
+    "classroom": 400,
+    "type": "practices",
+    "facultyId": "fac1"
+  },
+  {
+    "subjectName": "Організація дистанційного навчання у навчальному закладі",
+    "teacherName": "Маруленко Ганна Миколаївна",
+    "group": "419i",
+    "startDate": "07-03-2023 12:15",
+    "endDate": "07-03-2023 13:25",
+    "classroom": 301,
+    "type": "lectures",
+    "facultyId": "fac1"
+  },
+  {
+    "subjectName": "Лексика та граматика сучасної іноземної мови ",
+    "teacherName": "Цибуленко Катерина Володимирівна",
+    "group": "419i",
+    "startDate": "08-03-2023 9:25",
+    "endDate": "08-03-2023 10:35",
+    "classroom": 312,
+    "type": "lectures",
+    "facultyId": "fac1"
+  },
+  {
+    "subjectName": "Методика викладання фізики у старшій школі ",
+    "teacherName": "Огіренко Жанна Петрівна",
+    "group": "M122i",
+    "startDate": "06-03-2023 8:00",
+    "endDate": "06-03-2023 9:10",
+    "classroom": 251,
+    "type": "lectures",
+    "facultyId": "fac1"
+  },
+  {
+    "subjectName": "Методика викладання фізики у старшій школі ",
+    "teacherName": "Абрикосенко Іван Сергійович",
+    "group": "M122i",
+    "startDate": "06-03-2023 9:25",
+    "endDate": "06-03-2023 10:35",
+    "classroom": 251,
+    "type": "laboratories",
+    "facultyId": "fac1"
+  },
+  {
+    "subjectName": "Філософія освіти",
+    "teacherName": "Бананенко Василь Іванович",
+    "group": "M122i",
+    "startDate": "07-03-2023 9:25",
+    "endDate": "07-03-2023 10:35",
+    "classroom": 211,
+    "type": "lectures",
+    "facultyId": "fac1"
+  },
+  {
+    "subjectName": "Узагальнені функції",
+    "teacherName": "Білокачанова Наталія Петрівна",
+    "group": "M122i",
+    "startDate": "07-03-2023 10:50",
+    "endDate": "07-03-2023 12:00",
+    "classroom": 203,
+    "type": "practices",
+    "facultyId": "fac1"
+  },
+  {
+    "subjectName": "Практичний курс німецької мови з мовленнєвою практикою ",
+    "teacherName": "Брусниця Антоніна Олександрівна",
+    "group": "112\/1ф",
+    "startDate": "06-03-2023 9:25",
+    "endDate": "06-03-2023 10:35",
+    "classroom": 500,
+    "type": "practices",
+    "facultyId": "fac2"
+  },
+  {
+    "subjectName": "Практичний курс англійської мови з мовленнєвою практикою та КР",
+    "teacherName": "Винограденко Денис Олегович",
+    "group": "112\/1ф",
+    "startDate": "06-03-2023 10:50",
+    "endDate": "06-03-2023 12:00",
+    "classroom": 422,
+    "type": "practices",
+    "facultyId": "fac2"
+  },
+  {
+    "subjectName": "Історія зарубіжної літератури",
+    "teacherName": "Грушенко Іван Максимович",
+    "group": "112\/1ф",
+    "startDate": "06-03-2023 12:15",
+    "endDate": "06-03-2023 13:25",
+    "classroom": 126,
+    "type": "lectures",
+    "facultyId": "fac2"
+  },
+  {
+    "subjectName": "Практичний курс німецької мови з мовленнєвою практикою ",
+    "teacherName": "Брусниця Антоніна Олександрівна",
+    "group": "112\/1ф",
+    "startDate": "07-03-2023 10:50",
+    "endDate": "07-03-2023 12:00",
+    "classroom": 123,
+    "type": "practices",
+    "facultyId": "fac2"
+  },
+  {
+    "subjectName": "Українська мова",
+    "teacherName": "Пастернак Галина Денисівна",
+    "group": "112\/1ф",
+    "startDate": "07-03-2023 12:15",
+    "endDate": "07-03-2023 13:25",
+    "classroom": 250,
+    "type": "laboratories",
+    "facultyId": "fac2"
+  },
+  {
+    "subjectName": "Латинська мова",
+    "teacherName": "Помідоренко Дарина Карлівна",
+    "group": "112\/1ф",
+    "startDate": "08-03-2023 8:00",
+    "endDate": "08-03-2023 9:10",
+    "classroom": 231,
+    "type": "practices",
+    "facultyId": "fac2"
+  },
+  {
+    "subjectName": "Практичний курс німецької мови з мовленнєвою практикою ",
+    "teacherName": "Брусниця Антоніна Олександрівна",
+    "group": "112\/1ф",
+    "startDate": "08-03-2023 9:25",
+    "endDate": "08-03-2023 10:35",
+    "classroom": 212,
+    "type": "practices",
+    "facultyId": "fac2"
+  },
+  {
+    "subjectName": "Історія та культура України",
+    "teacherName": "Помело Віталій Олексійович",
+    "group": "112\/1ф",
+    "startDate": "08-03-2023 10:50",
+    "endDate": "08-03-2023 12:00",
+    "classroom": 500,
+    "type": "lectures",
+    "facultyId": "fac2"
+  },
+  {
+    "subjectName": "Організаційно-виховна година",
+    "teacherName": "Маруленко Ганна Миколаївна",
+    "group": "112\/1ф",
+    "startDate": "08-03-2023 12:15",
+    "endDate": "06-03-2023 13:25",
+    "classroom": 211,
+    "type": "lectures",
+    "facultyId": "fac2"
+  },
+  {
+    "subjectName": "Методика навчання англійської  мови з КР",
+    "teacherName": "Оливка Ірина Григорівна",
+    "group": "110ф",
+    "startDate": "06-03-2023 8:00",
+    "endDate": "06-03-2023 9:10",
+    "classroom": 412,
+    "type": "lectures",
+    "facultyId": "fac2"
+  },
+  {
+    "subjectName": "Лексикологія німецької мови",
+    "teacherName": "Айвенко Айя Галинівна",
+    "group": "110ф",
+    "startDate": "06-03-2023 9:25",
+    "endDate": "06-03-2023 10:35",
+    "classroom": 586,
+    "type": "laboratories",
+    "facultyId": "fac2"
+  },
+  {
+    "subjectName": "Практичний курс німецької мови з мовленнєвою практикою та КР ",
+    "teacherName": "Брусниця Антоніна Олександрівна",
+    "group": "110ф",
+    "startDate": "07-03-2023 8:00",
+    "endDate": "07-03-2023 9:10",
+    "classroom": 347,
+    "type": "practices",
+    "facultyId": "fac2"
+  },
+  {
+    "subjectName": "Література англомовних країн",
+    "teacherName": "Салатенко Варвара Миколаївна",
+    "group": "110ф",
+    "startDate": "07-03-2023 12:15",
+    "endDate": "07-03-2023 13:25",
+    "classroom": 112,
+    "type": "laboratories",
+    "facultyId": "fac2"
+  },
+  {
+    "subjectName": "Методика навчання зарубіжної літератури",
+    "teacherName": "Ріпа Сергій Сергійович",
+    "group": "110ф",
+    "startDate": "08-03-2023 8:00",
+    "endDate": "08-03-2023 9:10",
+    "classroom": 109,
+    "type": "practices",
+    "facultyId": "fac2"
+  },
+  {
+    "subjectName": "Педагогіка з навчальною практикою",
+    "teacherName": "Капустенко Олеся Олександрівна",
+    "group": "110ф",
+    "startDate": "08-03-2023 9:25",
+    "endDate": "08-03-2023 10:35",
+    "classroom": 112,
+    "type": "practices",
+    "facultyId": "fac2"
+  },
+  {
+    "subjectName": "Інтерпретація англомовного художнього тексту",
+    "teacherName": "Редис Ігор Павлович",
+    "group": "110ф",
+    "startDate": "08-03-2023 10:50",
+    "endDate": "08-03-2023 12:00",
+    "classroom": 206,
+    "type": "lectures",
+    "facultyId": "fac2"
+  },
+  {
+    "subjectName": "Організаційно-виховна година",
+    "teacherName": "Маруленко Ганна Миколаївна",
+    "group": "110ф",
+    "startDate": "08-03-2023 12:15",
+    "endDate": "06-03-2023 13:25",
+    "classroom": 211,
+    "type": "lectures",
+    "facultyId": "fac2"
+  },
+  {
+    "subjectName": "Практичний курс англійської мови з мовленнєвою практикою та КР",
+    "teacherName": "Винограденко Денис Олегович",
+    "group": "412ф",
+    "startDate": "06-03-2023 8:00",
+    "endDate": "06-03-2023 9:10",
+    "classroom": 431,
+    "type": "practices",
+    "facultyId": "fac2"
+  },
+  {
+    "subjectName": "Практикум з граматики англійської мови",
+    "teacherName": "Кавуняк Ілля Дмитрович",
+    "group": "412ф",
+    "startDate": "06-03-2023 9:25",
+    "endDate": "06-03-2023 10:35",
+    "classroom": 401,
+    "type": "practices",
+    "facultyId": "fac2"
+  },
+  {
+    "subjectName": "Практичний курс англійської мови з мовленнєвою практикою та КР",
+    "teacherName": "Винограденко Денис Олегович",
+    "group": "412ф",
+    "startDate": "07-03-2023 8:00",
+    "endDate": "07-03-2023 9:10",
+    "classroom": 357,
+    "type": "practices",
+    "facultyId": "fac2"
+  },
+  {
+    "subjectName": "Українська мова",
+    "teacherName": "Пастернак Галина Денисівна",
+    "group": "412ф",
+    "startDate": "07-03-2023 9:25",
+    "endDate": "07-03-2023 10:35",
+    "classroom": 302,
+    "type": "laboratories",
+    "facultyId": "fac2"
+  },
+  {
+    "subjectName": "Латинська мова",
+    "teacherName": "Помідоренко Дарина Карлівна",
+    "group": "412ф",
+    "startDate": "08-03-2023 8:00",
+    "endDate": "08-03-2023 9:10",
+    "classroom": 307,
+    "type": "laboratories",
+    "facultyId": "fac2"
+  },
+  {
+    "subjectName": "Практичний курс німецької мови з мовленнєвою практикою",
+    "teacherName": "Брусниця Антоніна Олександрівна",
+    "group": "412ф",
+    "startDate": "08-03-2023 9:25",
+    "endDate": "08-03-2023 10:35",
+    "classroom": 365,
+    "type": "practices",
+    "facultyId": "fac2"
+  },
+  {
+    "subjectName": "Історія та культура України",
+    "teacherName": "Помело Віталій Олексійович",
+    "group": "412ф",
+    "startDate": "08-03-2023 10:50",
+    "endDate": "08-03-2023 12:00",
+    "classroom": 315,
+    "type": "lectures",
+    "facultyId": "fac2"
+  },
+  {
+    "subjectName": "Організаційно-виховна година",
+    "teacherName": "Маруленко Ганна Миколаївна",
+    "group": "412ф",
+    "startDate": "08-03-2023 12:15",
+    "endDate": "06-03-2023 13:25",
+    "classroom": 400,
+    "type": "lectures",
+    "facultyId": "fac2"
+  },
+  {
+    "subjectName": "Педагогіка з навчальною практикою",
+    "teacherName": "Бобенко Лесь Петрович",
+    "group": "131п",
+    "startDate": "06-03-2023 8:00",
+    "endDate": "06-03-2023 9:10",
+    "classroom": 403,
+    "type": "practices",
+    "facultyId": "fac3"
+  },
+  {
+    "subjectName": "Сучасна європейська історіографія",
+    "teacherName": "Кизил Матвій Єфремович",
+    "group": "131п",
+    "startDate": "06-03-2023 9:25",
+    "endDate": "06-03-2023 10:35",
+    "classroom": 504,
+    "type": "lectures",
+    "facultyId": "fac3"
+  },
+  {
+    "subjectName": "Історична бібліографія",
+    "teacherName": "Папайя Євген Карпович",
+    "group": "131п",
+    "startDate": "07-03-2023 8:00",
+    "endDate": "07-03-2023 9:10",
+    "classroom": 408,
+    "type": "lectures",
+    "facultyId": "fac3"
+  },
+  {
+    "subjectName": "Історія середніх віків",
+    "teacherName": "Смородина Кіра Олегівна",
+    "group": "131п",
+    "startDate": "07-03-2023 9:25",
+    "endDate": "07-03-2023 10:35",
+    "classroom": 402,
+    "type": "laboratories",
+    "facultyId": "fac3"
+  },
+  {
+    "subjectName": "Фізичне виховання",
+    "teacherName": "Персик Віолетта Несторівна",
+    "group": "131п",
+    "startDate": "08-03-2023 9:25",
+    "endDate": "08-03-2023 10:35",
+    "classroom": "Спортзал",
+    "type": "practices",
+    "facultyId": "fac3"
+  },
+  {
+    "subjectName": "Філософія",
+    "teacherName": "Цукатов Альберт Йосифович",
+    "group": "131п",
+    "startDate": "08-03-2023 10:50",
+    "endDate": "08-03-2023 12:00",
+    "classroom": 404,
+    "type": "practices",
+    "facultyId": "fac3"
+  },
+  {
+    "subjectName": "Сучасна європейська історіографія",
+    "teacherName": "Кизил Матвій Єфремович",
+    "group": "210п",
+    "startDate": "06-03-2023 8:00",
+    "endDate": "06-03-2023 9:10",
+    "classroom": 511,
+    "type": "lectures",
+    "facultyId": "fac3"
+  },
+  {
+    "subjectName": "Інформаційно - комунікаційні технології",
+    "teacherName": "Арбузов Сергій Віталійович",
+    "group": "210п",
+    "startDate": "06-03-2023 9:25",
+    "endDate": "06-03-2023 10:35",
+    "classroom": 500,
+    "type": "laboratories",
+    "facultyId": "fac3"
+  },
+  {
+    "subjectName": "Економічна і соціальна географія світу.",
+    "teacherName": "Огірковий Давид Данилович",
+    "group": "210п",
+    "startDate": "06-03-2023 10:50",
+    "endDate": "06-03-2023 12:00",
+    "classroom": 538,
+    "type": "lectures",
+    "facultyId": "fac3"
+  },
+  {
+    "subjectName": "Ландшафтознавство з НП та КР",
+    "teacherName": "Фундуков Денис Ярославович",
+    "group": "210п",
+    "startDate": "07-03-2023 8:00",
+    "endDate": "07-03-2023 9:10",
+    "classroom": 147,
+    "type": "practices",
+    "facultyId": "fac3"
+  },
+  {
+    "subjectName": "Географія України з навчальною практикою. ",
+    "teacherName": "Тим'янов Ілля Степаненко",
+    "group": "210п",
+    "startDate": "07-03-2023 10:50",
+    "endDate": "07-03-2023 12:00",
+    "classroom": 505,
+    "type": "practices",
+    "facultyId": "fac3"
+  },
+  {
+    "subjectName": "Ландшафтознавство з НП та КР",
+    "teacherName": "Фундуков Денис Ярославович",
+    "group": "210п",
+    "startDate": "08-03-2023 9:25",
+    "endDate": "08-03-2023 10:35",
+    "classroom": 147,
+    "type": "lectures",
+    "facultyId": "fac3"
+  },
+  {
+    "subjectName": "Лексика та граматика сучасної іноземної мови",
+    "teacherName": "Хліб Михайло Петрович",
+    "group": "519п",
+    "startDate": "06-03-2023 8:00",
+    "endDate": "06-03-2023 9:10",
+    "classroom": 103,
+    "type": "practices",
+    "facultyId": "fac3"
+  },
+  {
+    "subjectName": "Інформаційне право",
+    "teacherName": "Арбузов Сергій Віталійович",
+    "group": "519п",
+    "startDate": "06-03-2023 10:50",
+    "endDate": "06-03-2023 12:00",
+    "classroom": 105,
+    "type": "lectures",
+    "facultyId": "fac3"
+  },
+  {
+    "subjectName": "Практика Європейського суду з прав людини",
+    "teacherName": "Малиновський Казамир Павлович",
+    "group": "519п",
+    "startDate": "07-03-2023 9:25",
+    "endDate": "07-03-2023 10:35",
+    "classroom": 107,
+    "type": "lectures",
+    "facultyId": "fac3"
+  },
+  {
+    "subjectName": "Інформаційне право",
+    "teacherName": "Арбузов Сергій Віталійович",
+    "group": "519п",
+    "startDate": "07-03-2023 12:15",
+    "endDate": "07-03-2023 13:25",
+    "classroom": 115,
+    "type": "laboratories",
+    "facultyId": "fac3"
+  },
+  {
+    "subjectName": "Міжнародне право",
+    "teacherName": "Вишня Леонід Ростиславович",
+    "group": "519п",
+    "startDate": "07-03-2023 13:40",
+    "endDate": "07-03-2023 14:50",
+    "classroom": 112,
+    "type": "laboratories",
+    "facultyId": "fac3"
+  },
+  {
+    "subjectName": "Інформаційне право",
+    "teacherName": "Арбузов Сергій Віталійович",
+    "group": "519п",
+    "startDate": "08-03-2023 10:50",
+    "endDate": "08-03-2023 12:00",
+    "classroom": 115,
+    "type": "practices",
+    "facultyId": "fac3"
+  },
+  {
+    "subjectName": "Право Європейського Союзу",
+    "teacherName": "Мангова Єлизавета Давидівна",
+    "group": "519п",
+    "startDate": "08-03-2023 12:15",
+    "endDate": "06-03-2023 13:25",
+    "classroom": 100,
+    "type": "lectures",
+    "facultyId": "fac3"
+  },
+  {
+    "subjectName": "Екологічне підприємництво",
+    "teacherName": "Черника Яків Олександрович",
+    "group": "320х",
+    "startDate": "06-03-2023 8:00",
+    "endDate": "06-03-2023 9:10",
+    "classroom": 741,
+    "type": "lectures",
+    "facultyId": "fac4"
+  },
+  {
+    "subjectName": "Урбоекологія",
+    "teacherName": "Хурма Петро Петрович",
+    "group": "320х",
+    "startDate": "06-03-2023 9:25",
+    "endDate": "06-03-2023 10:35",
+    "classroom": 750,
+    "type": "lectures",
+    "facultyId": "fac4"
+  },
+  {
+    "subjectName": "Популяційна екологія",
+    "teacherName": "Полуниця Радомир Валерійович",
+    "group": "320х",
+    "startDate": "07-03-2023 12:15",
+    "endDate": "07-03-2023 13:25",
+    "classroom": 751,
+    "type": "lectures",
+    "facultyId": "fac4"
+  },
+  {
+    "subjectName": "Моніторинг довкілля з КР",
+    "teacherName": "Обліпиха Юрій Максимович",
+    "group": "320х",
+    "startDate": "08-03-2023 9:25",
+    "endDate": "08-03-2023 10:35",
+    "classroom": 703,
+    "type": "laboratories",
+    "facultyId": "fac4"
+  },
+  {
+    "subjectName": "Інформаційно-комунікаційні технології",
+    "teacherName": "Клюква Руслан Ігорович",
+    "group": "320х",
+    "startDate": "08-03-2023 10:50",
+    "endDate": "08-03-2023 12:00",
+    "classroom": 707,
+    "type": "lectures",
+    "facultyId": "fac4"
+  },
+  {
+    "subjectName": "Організаційно-виховна година",
+    "teacherName": "Маруленко Ганна Миколаївна",
+    "group": "320х",
+    "startDate": "08-03-2023 12:15",
+    "endDate": "06-03-2023 13:25",
+    "classroom": 777,
+    "type": "lectures",
+    "facultyId": "fac4"
+  },
+  {
+    "subjectName": "Цитологія та гістологія з основами ембріології",
+    "teacherName": "Виноград Макар Максимович",
+    "group": "422\/2х",
+    "startDate": "06-03-2023 8:00",
+    "endDate": "06-03-2023 9:10",
+    "classroom": 124,
+    "type": "lectures",
+    "facultyId": "fac4"
+  },
+  {
+    "subjectName": "Зоологія з навчальною практикою і курсовою роботою",
+    "teacherName": "Кокос Яків Якович",
+    "group": "422\/2х",
+    "startDate": "06-03-2023 9:25",
+    "endDate": "06-03-2023 10:35",
+    "classroom": 108,
+    "type": "laboratories",
+    "facultyId": "fac4"
+  },
+  {
+    "subjectName": "Ботаніка з навчальною практикою",
+    "teacherName": "Аронія Марія Олександрівна",
+    "group": "422\/2х",
+    "startDate": "06-03-2023 10:50",
+    "endDate": "06-03-2023 12:00",
+    "classroom": 101,
+    "type": "practices",
+    "facultyId": "fac4"
+  },
+  {
+    "subjectName": "Цитологія та гістологія з основами ембріології",
+    "teacherName": "Виноград Макар Максимович",
+    "group": "422\/2х",
+    "startDate": "07-03-2023 9:25",
+    "endDate": "07-03-2023 10:35",
+    "classroom": 104,
+    "type": "lectures",
+    "facultyId": "fac4"
+  },
+  {
+    "subjectName": "Основи сільського господарства та грунтознавство з НП",
+    "teacherName": "Барбарис Надія Рафаїлівна",
+    "group": "422\/2х",
+    "startDate": "07-03-2023 10:50",
+    "endDate": "07-03-2023 12:00",
+    "classroom": 405,
+    "type": "practices",
+    "facultyId": "fac4"
+  },
+  {
+    "subjectName": "Фізичне виховання",
+    "teacherName": "Голубика Роберт Максимович",
+    "group": "422\/2х",
+    "startDate": "08-03-2023 9:25",
+    "endDate": "08-03-2023 10:35",
+    "classroom": "Спортзал",
+    "type": "practices",
+    "facultyId": "fac4"
+  },
+  {
+    "subjectName": "Основи сільського господарства та грунтознавство з НП",
+    "teacherName": "Барбарис Надія Рафаїлівна",
+    "group": "422\/2х",
+    "startDate": "08-03-2023 10:50",
+    "endDate": "08-03-2023 12:00",
+    "classroom": 405,
+    "type": "lectures",
+    "facultyId": "fac4"
+  },
+  {
+    "subjectName": "Організаційно-виховна година",
+    "teacherName": "Маруленко Ганна Миколаївна",
+    "group": "422\/2х",
+    "startDate": "08-03-2023 12:15",
+    "endDate": "06-03-2023 13:25",
+    "classroom": 402,
+    "type": "lectures",
+    "facultyId": "fac4"
+  },
+  {
+    "subjectName": "Аналіз продуктів споживання ",
+    "teacherName": "Артишок Василь Віталійович",
+    "group": "M222х",
+    "startDate": "06-03-2023 10:50",
+    "endDate": "06-03-2023 12:00",
+    "classroom": 205,
+    "type": "lectures",
+    "facultyId": "fac4"
+  },
+  {
+    "subjectName": "Біологічна хімія",
+    "teacherName": "Батат Зорян Романович",
+    "group": "M222х",
+    "startDate": "06-03-2023 13:40",
+    "endDate": "06-03-2023 14:50",
+    "classroom": 207,
+    "type": "laboratories",
+    "facultyId": "fac4"
+  },
+  {
+    "subjectName": "Нанохімія",
+    "teacherName": "Капуста Ірина Олексіївна",
+    "group": "M222х",
+    "startDate": "07-03-2023 8:00",
+    "endDate": "07-03-2023 9:10",
+    "classroom": 231,
+    "type": "practices",
+    "facultyId": "fac4"
+  },
+  {
+    "subjectName": "Іноземна мова для академічного спілкування",
+    "teacherName": "Диня Федір Іванович",
+    "group": "M222х",
+    "startDate": "07-03-2023 9:25",
+    "endDate": "07-03-2023 10:35",
+    "classroom": 250,
+    "type": "lectures",
+    "facultyId": "fac4"
+  },
+  {
+    "subjectName": "Біоетика та біобезпека ",
+    "teacherName": "Бамія Злата Олександрівна",
+    "group": "M222х",
+    "startDate": "07-03-2023 10:50",
+    "endDate": "07-03-2023 12:00",
+    "classroom": 233,
+    "type": "lectures",
+    "facultyId": "fac4"
+  }
+]

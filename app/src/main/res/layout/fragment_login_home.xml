@@ -1,0 +1,240 @@
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="viewModel"
+            type="com.melitopolcherry.hackathon.features.login.main.LoginHomeViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/content_login"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:background="@drawable/login_background_1"
+        tools:context=".features.login.LoginActivity">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/back_image"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="fitXY"
+            tools:ignore="ContentDescription" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/login_app_name_text_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/onboarding_content_padding"
+            android:layout_marginBottom="@dimen/padding_32"
+            android:fontFamily="@font/courgette"
+            android:gravity="center"
+            android:text="@string/app_name"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textSize="@dimen/login_app_name_text_size"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="@string/app_name"
+            tools:textColor="@color/white" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/login_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/login_app_name_text_view"
+            android:layout_marginStart="@dimen/padding_16"
+            android:layout_marginTop="@dimen/padding_28"
+            android:layout_marginEnd="@dimen/padding_16"
+            android:fontFamily="@font/sfprodisplaymedium"
+            android:gravity="center|top"
+            android:text="@string/login_home_title"
+            android:textColor="@color/white"
+            android:textSize="@dimen/text19"
+            app:layout_constraintTop_toBottomOf="@+id/login_app_name_text_view" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/login_button"
+            style="@style/MaterialLogin"
+            android:layout_width="0px"
+            android:layout_height="@dimen/button_normal_height"
+            android:layout_marginHorizontal="@dimen/padding_16"
+            android:layout_marginBottom="@dimen/padding_32"
+            android:clickable="@{viewModel.isLoading ? false : true}"
+            android:fontFamily="sans-serif-medium"
+            android:insetTop="0dp"
+            android:insetBottom="0dp"
+            android:minWidth="150dp"
+            android:text="@string/login"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_size_14"
+            android:textStyle="normal"
+            app:cornerRadius="50dp"
+            app:layout_constraintBottom_toTopOf="@+id/text_or"
+            app:layout_constraintEnd_toStartOf="@+id/guideline_half_width"
+            app:layout_constraintStart_toStartOf="parent"
+            app:shapeAppearance="@dimen/text_size_14"
+            tools:ignore="TouchTargetSizeCheck" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/sign_up_button"
+            style="@style/MaterialLogin"
+            android:layout_width="0px"
+            android:layout_height="@dimen/button_normal_height"
+            android:layout_marginHorizontal="@dimen/padding_16"
+            android:layout_marginBottom="@dimen/padding_32"
+            android:clickable="@{viewModel.isLoading ? false : true}"
+            android:fontFamily="sans-serif-medium"
+            android:insetTop="0dp"
+            android:insetBottom="0dp"
+            android:minWidth="150dp"
+            android:text="@string/sign_up"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_size_14"
+            android:textStyle="normal"
+            app:cornerRadius="50dp"
+            app:layout_constraintBottom_toTopOf="@+id/text_or"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/guideline_half_width"
+            app:shapeAppearance="@dimen/text_size_14"
+            tools:ignore="TouchTargetSizeCheck" />
+
+        <View
+            android:layout_width="0px"
+            android:layout_height="1dp"
+            android:layout_marginHorizontal="@dimen/padding_16"
+            android:background="#EBEDF5"
+            app:layout_constraintBottom_toBottomOf="@id/text_or"
+            app:layout_constraintEnd_toStartOf="@id/text_or"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/text_or" />
+
+        <View
+            android:layout_width="0px"
+            android:layout_height="1dp"
+            android:layout_marginHorizontal="@dimen/padding_16"
+            android:background="#EBEDF5"
+            app:layout_constraintBottom_toBottomOf="@id/text_or"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/text_or"
+            app:layout_constraintTop_toTopOf="@id/text_or" />
+
+        <TextView
+            android:id="@+id/text_or"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/padding_28"
+            android:fontFamily="@font/sfprodisplayregular"
+            android:text="@string/or"
+            android:textColor="@color/white"
+            android:textSize="@dimen/text12"
+            app:layout_constraintBottom_toTopOf="@id/google_signin_button"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/google_signin_button"
+            style="@style/MaterialLogin"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/button_normal_height"
+            android:layout_marginStart="@dimen/padding_16"
+            android:layout_marginTop="@dimen/padding_19"
+            android:layout_marginEnd="@dimen/padding_16"
+            android:layout_marginBottom="@dimen/padding_22"
+            android:clickable="@{viewModel.isLoading ? false : true}"
+            android:fontFamily="@font/sfprodisplaymedium"
+            android:insetTop="0dp"
+            android:insetBottom="0dp"
+            android:text="@string/login_with_google_text"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text15"
+            android:textStyle="normal"
+            app:cornerRadius="50dp"
+            app:icon="@drawable/ic_google"
+            app:iconGravity="textStart"
+            app:iconPadding="@dimen/padding_8"
+            app:iconTint="@null"
+            app:layout_constraintBottom_toTopOf="@+id/facebook_sign_in_button"
+            app:shapeAppearance="@dimen/padding_4"
+            tools:ignore="TouchTargetSizeCheck" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/facebook_sign_in_button"
+            style="@style/MaterialLogin"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/button_normal_height"
+            android:layout_marginStart="@dimen/padding_16"
+            android:layout_marginTop="@dimen/padding_25"
+            android:layout_marginEnd="@dimen/padding_16"
+            android:layout_marginBottom="@dimen/padding_22"
+            android:clickable="@{viewModel.isLoading ? false : true}"
+            android:fontFamily="@font/sfprodisplaymedium"
+            android:insetTop="0dp"
+            android:insetBottom="0dp"
+            android:text="@string/login_with_facebook_text"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text15"
+            android:textStyle="normal"
+            app:cornerRadius="50dp"
+            app:icon="@drawable/ic_facebook"
+            app:iconGravity="textStart"
+            app:iconPadding="@dimen/padding_8"
+            app:iconTint="@null"
+            app:layout_constraintBottom_toTopOf="@+id/skip_reg_button"
+            app:shapeAppearance="@dimen/padding_4"
+            tools:ignore="TouchTargetSizeCheck" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/skip_reg_button"
+            style="@style/Widget.MaterialComponents.Button.TextButton"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/button_normal_height"
+            android:layout_centerHorizontal="true"
+            android:layout_gravity="center"
+            android:layout_marginEnd="@dimen/padding_8"
+            android:layout_marginBottom="@dimen/padding_8"
+            android:backgroundTint="@color/transparent"
+            android:clickable="@{viewModel.isLoading ? false : true}"
+            android:fontFamily="@font/sfprodisplaymedium"
+            android:insetTop="0dp"
+            android:insetBottom="0dp"
+            android:text="@string/skip_button_text"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textSize="@dimen/text15"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            tools:ignore="TouchTargetSizeCheck" />
+
+        <androidx.core.widget.ContentLoadingProgressBar
+            android:id="@+id/loading_view"
+            style="?android:attr/progressBarStyleLarge"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:layout_gravity="center"
+            android:indeterminate="true"
+            android:visibility="@{viewModel.isLoading ? View.VISIBLE : View.INVISIBLE}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:background="@color/transparent"
+            tools:visibility="visible" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline_half_width"
+            android:layout_width="1dp"
+            android:layout_height="0px"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintGuide_percent="0.5"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

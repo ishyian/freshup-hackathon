@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:visibility="gone"
+    app:layout_anchorGravity="center"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintTop_toTopOf="@+id/scroll_view"
+    tools:ignore="UseCompoundDrawables"
+    tools:visibility="visible">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/no_results_image"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:src="@drawable/illustrations_no_search_result"
+        tools:ignore="ContentDescription" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/no_events_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="@dimen/padding_16"
+        android:layout_marginStart="@dimen/padding_24"
+        android:layout_marginEnd="@dimen/padding_24"
+        android:fontFamily="sans-serif"
+        android:gravity="center"
+        android:text="@string/no_events_found"
+        android:textAlignment="center"
+        android:textColor="@color/text_primary"
+        android:textSize="@dimen/text_size_16"
+        tools:textColor="@color/black" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/no_events_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="@dimen/padding_4"
+        android:layout_marginStart="@dimen/padding_24"
+        android:layout_marginEnd="@dimen/padding_24"
+        android:fontFamily="sans-serif"
+        android:gravity="center"
+        android:text="@string/click_on_track_and_we_ll_notify_you_of_upcoming_events"
+        android:textAlignment="center"
+        android:textColor="@color/text_secondary"
+        android:textSize="@dimen/text_size_14"
+        tools:textColor="@color/black" />
+
+</androidx.appcompat.widget.LinearLayoutCompat>

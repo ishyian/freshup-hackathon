@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/profile_root_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/background_primary"
+        android:clickable="true"
+        android:fitsSystemWindows="false"
+        android:focusable="true"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/toolbar_title"
+                style="@style/TitleToolbar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:gravity="center"
+                android:text="@string/navigation_interests"
+                tools:ignore="RelativeOverlap" />
+
+            <androidx.appcompat.widget.AppCompatImageButton
+                android:id="@+id/second_action_button"
+                android:layout_width="@dimen/back_button_height"
+                android:layout_height="@dimen/back_button_height"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:layout_marginEnd="@dimen/padding_16"
+                android:background="@drawable/ripple_effect"
+                android:src="@drawable/ic_account_black"
+                android:tint="@color/text_primary" />
+
+        </RelativeLayout>
+
+        <include
+            android:id="@+id/unlogined_state"
+            layout="@layout/unlogined_state_interests"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_centerVertical="true"
+            android:layout_gravity="center" />
+
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/profile_tab_layout"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/tab_height"
+            android:background="@null"
+            app:tabGravity="fill"
+            app:tabIndicatorColor="@color/colorAccent"
+            app:tabIndicatorHeight="1dp"
+            app:tabMode="fixed"
+            app:tabSelectedTextColor="@color/text_accent"
+            app:tabTextAppearance="@style/TabAppearance"
+            app:tabTextColor="@color/tab_unselected"
+            app:tabUnboundedRipple="false" />
+
+        <androidx.viewpager2.widget.ViewPager2
+            android:id="@+id/profile_view_pager"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+</layout>
+

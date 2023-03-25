@@ -1,0 +1,83 @@
+apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-parcelize'
+apply plugin: 'kotlin-kapt'
+apply plugin: 'realm-android'
+apply plugin: 'dagger.hilt.android.plugin'
+
+android {
+    def globalConfiguration = rootProject.extensions.getByName("ext")
+    compileSdkVersion globalConfiguration["androidCompileSdkVersion"]
+
+    defaultConfig {
+        minSdkVersion globalConfiguration["androidMinSdkVersion"]
+        targetSdkVersion globalConfiguration["androidTargetSdkVersion"]
+    }
+
+    buildTypes {
+        debug {
+            minifyEnabled false
+        }
+        release {
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    flavorDimensions "environment"
+    productFlavors {
+        dev {
+            dimension "environment"
+            buildConfigField 'String', 'GEOCODE_API_KEY', "\"AIzaSyDiEs5DKFhSad429XPRCbxRoJJOHsu272U\""
+            buildConfigField 'String', 'PLACES_API_KEY', "\"AIzaSyDUczoOJwput7_bPfgOUz0todrz3Yp3u_M\""
+            buildConfigField 'String', 'OPENWEATHERMAP_APPID', "\"1ddff9b59a618f39d6dbd200cd0c2af5\""
+            buildConfigField 'String', 'SERVER_URL', "\"https://api.dev.evenz.com/client/\""
+            buildConfigField 'String', 'AUTH_TOKEN_LOGIN', "\"evenz_mobile_app\""
+            buildConfigField 'String', 'AUTH_TOKEN_PASSWORD', "\"AdminEvenzApp2019\""
+        }
+
+        production {
+            dimension "environment"
+            buildConfigField 'String', 'GEOCODE_API_KEY', "\"AIzaSyDiEs5DKFhSad429XPRCbxRoJJOHsu272U\""
+            buildConfigField 'String', 'PLACES_API_KEY', "\"AIzaSyDUczoOJwput7_bPfgOUz0todrz3Yp3u_M\""
+            buildConfigField 'String', 'OPENWEATHERMAP_APPID', "\"1ddff9b59a618f39d6dbd200cd0c2af5\""
+            buildConfigField 'String', 'SERVER_URL', "\"https://api.evenz.com/client/\""
+            buildConfigField 'String', 'AUTH_TOKEN_LOGIN', "\"evenz-mobile-app\""
+            buildConfigField 'String', 'AUTH_TOKEN_PASSWORD', "\"R8orWymdYnqEU83k67yG\""
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    buildToolsVersion = globalConfiguration["androidBuildToolsVersion"]
+}
+
+dependencies {
+    def ext = rootProject.ext
+    def notations = ext.dataDependencies
+
+    implementation fileTree(include: ['*.aar'], dir: 'libs')
+
+    for (item in notations.forImplementation) {
+        implementation item
+    }
+
+    for (item in notations.forKapt) {
+        kapt item
+    }
+
+    for (item in notations.forDebug) {
+        debugImplementation item
+    }
+
+    for (item in notations.forRelease) {
+        releaseImplementation item
+    }
+
+    implementation (ext.materialCalendar){
+        transitive = false
+    }
+}

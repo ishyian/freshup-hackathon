@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="?android:attr/selectableItemBackground"
+    android:paddingTop="@dimen/padding_10"
+    android:paddingBottom="@dimen/padding_10">
+
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/image_performer"
+        android:layout_width="@dimen/offset50"
+        android:layout_height="@dimen/offset50"
+        android:layout_gravity="center_vertical"
+        android:layout_marginStart="@dimen/padding_16"
+        android:scaleType="centerCrop"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:shapeAppearanceOverlay="@style/circleImageView"
+        tools:ignore="ContentDescription"
+        tools:srcCompat="@drawable/placeholder_event" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/name_performer"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/padding_16"
+        android:layout_marginEnd="@dimen/padding_8"
+        android:maxLines="1"
+        android:ellipsize="end"
+        android:layout_marginTop="@dimen/offset5"
+        android:fontFamily="@font/sfprodisplaymedium"
+        android:includeFontPadding="false"
+        android:textColor="@color/text_primary"
+        android:textSize="@dimen/text14"
+        app:layout_constraintEnd_toStartOf="@+id/more_button"
+        app:layout_constraintStart_toEndOf="@+id/image_performer"
+        app:layout_constraintTop_toTopOf="@+id/image_performer"
+        tools:text="Name"
+        tools:textColor="@color/black" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/description_performer"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/padding_16"
+        android:layout_marginEnd="@dimen/padding_8"
+        android:maxLines="1"
+        android:ellipsize="end"
+        android:layout_toStartOf="@+id/more_button"
+        android:layout_toEndOf="@+id/image_performer"
+        android:fontFamily="@font/sfprodisplayregular"
+        android:textColor="@color/text_secondary"
+        android:textSize="@dimen/text12"
+        android:layout_marginBottom="@dimen/offset5"
+        app:layout_constraintBottom_toBottomOf="@+id/image_performer"
+        app:layout_constraintEnd_toStartOf="@+id/more_button"
+        app:layout_constraintStart_toEndOf="@+id/image_performer"
+        tools:text="description" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/more_button"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/button_small_height"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="@dimen/padding_16"
+        android:clickable="false"
+        android:elevation="0dp"
+        android:fontFamily="@font/sfprodisplaymedium"
+        android:insetTop="0dp"
+        android:insetBottom="0dp"
+        android:minWidth="1dp"
+        android:text="@string/more"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:textSize="@dimen/text12"
+        app:cornerRadius="@dimen/padding_16"
+        app:elevation="0dp"
+        app:layout_constraintBottom_toBottomOf="@+id/image_performer"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/image_performer" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

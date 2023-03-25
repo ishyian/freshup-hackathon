@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="viewModel"
+            type="com.melitopolcherry.hackathon.features.trackingenteties.TrackingEntetiesViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/tracking_events_main"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/background_primary"
+        android:fitsSystemWindows="true"
+        android:orientation="vertical"
+        tools:context=".features.trackingenteties.TrackingEntetiesActivity">
+
+        <include
+            android:id="@+id/back_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/padding_16"
+            app:layout_constraintBottom_toBottomOf="@+id/search_tracked_events"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/search_tracked_events"
+            layout="@layout/back_button" />
+
+        <androidx.appcompat.widget.SearchView
+            android:id="@+id/search_tracked_events"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/search_height"
+            android:layout_marginStart="@dimen/padding_8"
+            android:layout_marginTop="@dimen/padding_8"
+            android:layout_marginEnd="@dimen/padding_16"
+            android:layout_marginBottom="@dimen/padding_10"
+            android:background="@drawable/rounded_search"
+            android:focusable="false"
+            android:focusableInTouchMode="true"
+            android:inputType="text"
+            android:maxLines="1"
+            android:textSize="@dimen/text_size_14"
+            app:closeIcon="@drawable/ic_close_rounded"
+            app:iconifiedByDefault="false"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/back_button"
+            app:layout_constraintTop_toTopOf="parent"
+            app:queryBackground="@null"
+            app:queryHint="Search Events"
+            app:searchIcon="@null" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/tracking_events_rv"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:overScrollMode="never"
+            android:paddingTop="@dimen/padding_8"
+            app:layout_constraintBottom_toTopOf="@+id/load_more_view"
+            app:layout_constraintTop_toBottomOf="@+id/search_tracked_events"
+            tools:listitem="@layout/item_tracking" />
+
+        <androidx.core.widget.ContentLoadingProgressBar
+            android:id="@+id/load_more_view"
+            style="?android:attr/progressBarStyleSmall"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:indeterminate="true"
+            android:padding="@dimen/padding_10"
+            android:visibility="@{viewModel.isLoadingMore ? View.VISIBLE : View.GONE}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            tools:background="@color/transparent"
+            tools:visibility="visible" />
+
+        <include
+            android:id="@+id/no_tracking_layout"
+            layout="@layout/empty_state_search"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="@+id/tracking_events_rv"
+            app:layout_constraintTop_toTopOf="@+id/tracking_events_rv" />
+
+        <androidx.core.widget.ContentLoadingProgressBar
+            android:id="@+id/loading_view"
+            style="?android:attr/progressBarStyleLarge"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:indeterminate="true"
+            android:visibility="@{viewModel.isLoading ? View.VISIBLE : View.INVISIBLE}"
+            app:layout_constraintBottom_toBottomOf="@+id/tracking_events_rv"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/tracking_events_rv"
+            tools:background="@color/transparent"
+            tools:visibility="visible" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

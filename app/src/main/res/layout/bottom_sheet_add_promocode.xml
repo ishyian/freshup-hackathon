@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="viewModel"
+            type="com.melitopolcherry.hackathon.features.bottom.AddPromocodeViewModel" />
+    </data>
+
+    <RelativeLayout
+        android:id="@+id/bottom_sheet_add_promocode"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/bottom_sheet_rounded"
+        android:orientation="vertical"
+        app:behavior_hideable="true"
+        app:behavior_peekHeight="0dp"
+        app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior">
+
+        <include
+            android:id="@+id/bottom_sheet_slide_button"
+            layout="@layout/view_notch" />
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/promocode_edit_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/bottom_sheet_slide_button"
+            android:layout_marginStart="@dimen/padding_16"
+            android:layout_marginTop="@dimen/padding_22"
+            android:layout_marginEnd="@dimen/padding_16"
+            android:layout_marginBottom="@dimen/padding_2"
+            android:background="@android:color/transparent"
+            android:fontFamily="sans-serif-medium"
+            android:hint="@string/add_promocode"
+            android:imeOptions="actionDone"
+            android:inputType="textCapCharacters"
+            android:lines="1"
+            android:maxLines="1"
+            android:textAlignment="center"
+            android:textAllCaps="true"
+            android:textColorHint="@color/text_secondary"
+            android:textColor="@color/text_primary"
+            android:textSize="@dimen/text_size_16" />
+
+        <View
+            android:id="@+id/line_separator"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/separator"
+            android:layout_below="@+id/promocode_edit_text"
+            android:layout_marginStart="@dimen/padding_16"
+            android:layout_marginEnd="@dimen/padding_16"
+            android:layout_marginBottom="@dimen/padding_16" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/save_button"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/button_normal_height"
+            android:layout_below="@+id/line_separator"
+            android:layout_gravity="bottom|center"
+            android:layout_marginStart="@dimen/padding_16"
+            android:layout_marginTop="@dimen/padding_22"
+            android:layout_marginEnd="@dimen/padding_16"
+            android:layout_marginBottom="@dimen/padding_22"
+            android:clickable="@{viewModel.isLoading ? false : true}"
+            android:fontFamily="sans-serif"
+            android:insetTop="0dp"
+            android:insetBottom="0dp"
+            android:text="@string/add_promo_code"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textSize="@dimen/text_size_16"
+            app:cornerRadius="20dp" />
+
+        <androidx.core.widget.ContentLoadingProgressBar
+            android:id="@+id/loading_view"
+            style="?android:attr/progressBarStyleLarge"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/save_button"
+            android:layout_alignTop="@+id/bottom_sheet_slide_button"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:layout_gravity="center"
+            android:indeterminate="true"
+            android:visibility="@{viewModel.isLoading ? View.VISIBLE : View.INVISIBLE}"
+            tools:background="@color/transparent"
+            tools:visibility="visible" />
+
+    </RelativeLayout>
+</layout>

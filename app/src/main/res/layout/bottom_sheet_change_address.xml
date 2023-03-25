@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <RelativeLayout
+        android:background="@color/background_primary"
+        android:id="@+id/change_address_main"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.appcompat.widget.AppCompatImageButton
+            android:id="@+id/back_button"
+            android:tint="@color/text_primary"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/padding_10"
+            android:layout_marginTop="@dimen/padding_10"
+            android:layout_marginEnd="@dimen/padding_10"
+            android:background="@null"
+            android:paddingStart="@dimen/padding_6"
+            android:paddingTop="@dimen/padding_8"
+            android:paddingEnd="@dimen/padding_6"
+            android:paddingBottom="@dimen/padding_8"
+            android:src="@drawable/ic_back_button"
+            tools:ignore="ContentDescription,RtlSymmetry"
+            tools:tint="@color/black" />
+
+        <androidx.appcompat.widget.SearchView
+            android:id="@+id/search_places"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/search_height"
+            android:layout_marginTop="@dimen/padding_10"
+            android:layout_marginEnd="@dimen/padding_16"
+            android:layout_marginBottom="@dimen/padding_10"
+            android:layout_toEndOf="@+id/back_button"
+            android:background="@drawable/rounded_search"
+            android:focusable="true"
+            android:imeOptions="actionSearch"
+            android:inputType="text"
+            android:maxLines="1"
+            android:textSize="@dimen/text_size_14"
+            style="@style/SearchStyle"
+            app:closeIcon="@drawable/ic_close_rounded"
+            app:iconifiedByDefault="false"
+            app:queryBackground="@null"
+            app:queryHint="Search Places"
+            app:searchIcon="@null" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/address_recycler_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/search_places"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            tools:listitem="@layout/item_place_recycler" />
+
+    </RelativeLayout>
+</layout>
+

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:gravity="center"
+    android:orientation="vertical"
+    tools:ignore="UseCompoundDrawables"
+    android:visibility="gone"
+    tools:visibility="visible"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/no_track_image"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:src="@drawable/illustrations_no_tracked"
+        tools:ignore="ContentDescription" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/no_track_text"
+        android:textColor="@color/text_primary"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/padding_16"
+        android:layout_marginTop="@dimen/padding_16"
+        android:layout_marginEnd="@dimen/padding_16"
+        android:fontFamily="sans-serif"
+        android:gravity="center"
+        android:text="@string/you_are_not_tracking_any_venues_events_or_performers_yet"
+        android:textAlignment="center"
+        android:textSize="@dimen/text_size_18" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/no_tracking_results_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginStart="@dimen/padding_16"
+        android:layout_marginTop="@dimen/padding_8"
+        android:layout_marginEnd="@dimen/padding_16"
+        android:fontFamily="sans-serif-light"
+        android:gravity="center"
+        android:text="@string/click_on_track_and_we_ll_notify_you_of_upcoming_events"
+        android:textAlignment="center"
+        android:textColor="@color/text_secondary"
+        android:textSize="@dimen/text_size_16" />
+
+</androidx.appcompat.widget.LinearLayoutCompat>

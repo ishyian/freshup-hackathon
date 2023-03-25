@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="?android:attr/selectableItemBackground"
+    android:orientation="horizontal"
+    android:paddingStart="@dimen/padding_12"
+    android:paddingTop="@dimen/padding_8"
+    android:paddingEnd="0dp"
+    android:paddingBottom="@dimen/padding_8">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/vertical_line"
+        android:layout_width="@dimen/padding_2"
+        android:layout_height="0dp"
+        android:background="@android:color/holo_purple"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="@+id/ticket_row"
+        app:layout_constraintTop_toTopOf="@+id/ticket_section"
+        tools:ignore="ContentDescription" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/ticket_section"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/padding_16"
+        android:layout_marginEnd="@dimen/padding_10"
+        android:fontFamily="sans-serif"
+        app:layout_constraintEnd_toStartOf="@+id/price_ticket"
+        android:maxLines="1"
+        android:textColor="@color/text_primary"
+        app:layout_constraintStart_toEndOf="@+id/vertical_line"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="Section 5" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/ticket_row"
+        android:layout_width="0dp"
+        app:layout_constraintEnd_toStartOf="@+id/price_ticket"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/ticket_section"
+        android:layout_marginStart="@dimen/padding_16"
+        android:layout_marginTop="@dimen/padding_4"
+        android:layout_marginEnd="@dimen/padding_10"
+        android:fontFamily="sans-serif-light"
+        android:maxLines="1"
+        android:textColor="@color/text_secondary"
+        app:layout_constraintStart_toEndOf="@+id/vertical_line"
+        app:layout_constraintTop_toBottomOf="@+id/ticket_section"
+        tools:text="Row 5" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/price_ticket"
+        android:layout_width="wrap_content"
+        app:layout_constraintBottom_toBottomOf="@+id/price_ea_text"
+        app:layout_constraintEnd_toStartOf="@+id/price_ea_text"
+        android:layout_height="wrap_content"
+        android:fontFamily="sans-serif"
+        android:textColor="@color/text_primary"
+        tools:text="$124" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/price_ea_text"
+        android:layout_marginEnd="@dimen/padding_16"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="@+id/ticket_row"
+        app:layout_constraintTop_toTopOf="@+id/ticket_section"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/price_ticket"
+        android:layout_toEndOf="@+id/price_ticket"
+        android:fontFamily="sans-serif-light"
+        android:text="@string/ea"
+        android:textColor="@color/text_secondary" />
+</androidx.constraintlayout.widget.ConstraintLayout>

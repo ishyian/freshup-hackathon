@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="viewModel"
+            type="com.melitopolcherry.hackathon.features.filters.CitiesViewModel" />
+    </data>
+
+    <RelativeLayout
+        android:id="@+id/cities_layout"
+        android:background="@drawable/bottom_sheet_rounded"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <include
+            android:id="@+id/bottom_sheet_slide_button"
+            layout="@layout/view_notch" />
+
+        <androidx.appcompat.widget.SearchView
+            android:id="@+id/location_search_view"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/search_height"
+            android:layout_below="@+id/bottom_sheet_slide_button"
+            android:layout_marginStart="@dimen/padding_16"
+            android:layout_marginTop="@dimen/padding_25"
+            android:layout_marginEnd="@dimen/padding_16"
+            android:focusable="false"
+            android:focusableInTouchMode="true"
+            android:inputType="text"
+            android:maxLines="1"
+            android:textSize="@dimen/text_size_14"
+            app:iconifiedByDefault="false"
+            android:background="@drawable/rounded_search"
+            app:queryBackground="@android:color/transparent"
+            app:queryHint="Search City"
+            app:searchIcon="@null"
+            app:closeIcon="@drawable/ic_close_rounded" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/search_city_recycler_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/location_search_view"
+            android:choiceMode="singleChoice"
+            android:focusableInTouchMode="true"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            tools:listitem="@layout/item_city" />
+
+        <include
+            android:id="@+id/no_results_layout"
+            layout="@layout/empty_state_search"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_below="@+id/location_search_view" />
+
+        <androidx.core.widget.ContentLoadingProgressBar
+            android:id="@+id/loading_view"
+            android:visibility="@{viewModel.isLoading ? View.VISIBLE : View.INVISIBLE}"
+            style="?android:attr/progressBarStyleLarge"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:layout_gravity="center"
+            android:indeterminate="true"
+            tools:background="@color/transparent"
+            tools:visibility="visible" />
+
+    </RelativeLayout>
+</layout>

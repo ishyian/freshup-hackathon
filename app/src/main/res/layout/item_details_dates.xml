@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="wrap_content">
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?android:attr/selectableItemBackground"
+        android:baselineAligned="false"
+        android:orientation="horizontal"
+        android:padding="@dimen/padding_16"
+        android:weightSum="1">
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:id="@+id/event_date"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center|start"
+            android:layout_weight="0.3"
+            android:orientation="vertical">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/event_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif"
+                android:textColor="@color/text_primary"
+                android:textSize="@dimen/text_size_16"
+                tools:text="17" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/event_day_part"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif"
+                android:textColor="@color/text_secondary"
+                android:textSize="@dimen/text_size_14"
+                tools:text="OCT" />
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="0.7"
+            android:orientation="vertical">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/event_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif"
+                android:textColor="@color/text_primary"
+                android:textSize="@dimen/text_size_16"
+                tools:text="name" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/event_description"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif-light"
+                android:textColor="@color/text_secondary"
+                android:textSize="@dimen/text_size_14"
+                tools:text="description" />
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@+id/event_place"
+        android:layout_marginStart="@dimen/padding_16"
+        android:layout_marginTop="@dimen/padding_8"
+        android:layout_marginEnd="@dimen/padding_16"
+        android:layout_marginBottom="@dimen/padding_4"
+        android:background="@color/separator" />
+
+</androidx.appcompat.widget.LinearLayoutCompat>

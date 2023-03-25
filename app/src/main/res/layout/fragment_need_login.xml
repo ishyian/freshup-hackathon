@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/no_logged_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:background="@color/background_primary"
+        android:orientation="vertical">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ilustrations_general_admission" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/no_logged_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/padding_32"
+            android:fontFamily="sans-serif"
+            android:gravity="center"
+            android:text="@string/you_are_not_loged_in_n_please_login_to_get_the_access"
+            android:textSize="@dimen/text_size_20"
+            android:textColor="@color/text_primary"/>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/go_login_button"
+            style="@style/Widget.MaterialComponents.Button.TextButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/padding_34"
+            android:fontFamily="sans-serif"
+            android:text="@string/go_to_login"
+            android:textAllCaps="false"
+            android:textColor="@color/colorAccent"
+            android:textSize="@dimen/text_size_18" />
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+</layout>

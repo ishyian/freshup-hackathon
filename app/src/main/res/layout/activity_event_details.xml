@@ -1,0 +1,485 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="viewModel"
+            type="com.melitopolcherry.hackathon.features.eventdetails.activity.DetailsEventViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/details_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/background_primary"
+        android:fitsSystemWindows="true">
+
+        <androidx.coordinatorlayout.widget.CoordinatorLayout
+            android:id="@+id/layout_event_details"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:orientation="vertical"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toTopOf="@+id/bottom_container"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:visibility="visible">
+
+            <com.google.android.material.appbar.AppBarLayout
+                android:id="@+id/appbar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/background_primary"
+                app:elevation="0dp"
+                app:layout_anchorGravity="top"
+                tools:background="@color/white">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/layout_detail_collapsing_header"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <include
+                        android:id="@+id/back_button"
+                        layout="@layout/back_button"
+                        app:layout_constraintBottom_toBottomOf="@+id/event_place"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="@+id/event_title" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/event_title"
+                        style="@style/DetailsTitle"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="start"
+                        android:layout_marginStart="@dimen/padding_12"
+                        android:layout_marginTop="@dimen/padding_8"
+                        android:layout_marginEnd="@dimen/padding_12"
+                        android:layout_toStartOf="@+id/track_button"
+                        android:layout_toEndOf="@+id/back_button"
+                        android:ellipsize="end"
+                        android:includeFontPadding="false"
+                        android:maxLines="3"
+                        app:layout_constraintEnd_toStartOf="@+id/track_button"
+                        app:layout_constraintStart_toEndOf="@+id/back_button"
+                        app:layout_constraintTop_toTopOf="parent"
+                        tools:text="Title" />
+
+                    <androidx.appcompat.widget.AppCompatImageButton
+                        android:id="@+id/track_button"
+                        android:layout_width="@dimen/button_normal_height"
+                        android:layout_height="@dimen/button_normal_height"
+                        android:layout_marginEnd="@dimen/padding_16"
+                        android:background="@drawable/track_button_background_selector"
+                        android:foreground="@drawable/ripple_effect"
+                        android:padding="@dimen/padding_4"
+                        android:src="@drawable/track_button_selector"
+                        android:textAlignment="center"
+                        app:layout_constraintBottom_toBottomOf="@+id/event_place"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="@+id/event_title"
+                        tools:ignore="ContentDescription" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/event_date"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/event_title"
+                        android:layout_marginStart="@dimen/padding_12"
+                        android:layout_marginTop="@dimen/padding_4"
+                        android:layout_marginEnd="@dimen/padding_12"
+                        android:layout_toStartOf="@+id/track_button"
+                        android:layout_toEndOf="@+id/back_button"
+                        android:fontFamily="sans-serif"
+                        android:textColor="@color/text_secondary"
+                        android:textSize="@dimen/text_size_14"
+                        android:transitionName="event_date"
+                        app:layout_constraintEnd_toStartOf="@+id/track_button"
+                        app:layout_constraintStart_toEndOf="@+id/back_button"
+                        app:layout_constraintTop_toBottomOf="@+id/event_title"
+                        tools:text="Oct 17, 6:30PM - 9:00PM" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/event_place"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/event_date"
+                        android:layout_marginStart="@dimen/padding_12"
+                        android:layout_marginTop="@dimen/padding_4"
+                        android:layout_marginEnd="@dimen/padding_12"
+                        android:layout_toStartOf="@+id/track_button"
+                        android:layout_toEndOf="@+id/back_button"
+                        android:fontFamily="sans-serif"
+                        android:textColor="@color/text_secondary"
+                        android:textSize="@dimen/text_size_14"
+                        android:transitionName="event_place"
+                        app:layout_constraintBottom_toTopOf="@+id/details1_separator"
+                        app:layout_constraintEnd_toStartOf="@+id/track_button"
+                        app:layout_constraintStart_toEndOf="@+id/back_button"
+                        app:layout_constraintTop_toBottomOf="@+id/event_date"
+                        tools:text="test place" />
+
+                    <View
+                        android:id="@+id/details1_separator"
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_below="@+id/event_place"
+                        android:layout_marginTop="@dimen/padding_8"
+                        android:background="@color/separator"
+                        app:layout_constraintTop_toBottomOf="@+id/event_place" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </com.google.android.material.appbar.AppBarLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/img_placeholder"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_anchor="@id/appbar"
+                app:layout_anchorGravity="bottom"
+                app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/collapsing_image_view"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:background="@drawable/placeholder_event"
+                    app:layout_constraintDimensionRatio="H,16:9"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.core.widget.NestedScrollView
+                android:id="@+id/event_details_scroll_view"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:overScrollMode="never"
+                app:layout_anchor="@id/appbar"
+                app:layout_anchorGravity="bottom"
+                app:layout_behavior="@string/appbar_scrolling_view_behavior"
+                app:layout_collapseMode="none">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/nested_container"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/background_primary"
+                    android:descendantFocusability="blocksDescendants"
+                    android:orientation="vertical"
+                    app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/price_icon"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginStart="@dimen/padding_16"
+                        android:layout_marginTop="@dimen/offset30"
+                        android:src="@drawable/ic_price"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/event_prices"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginStart="@dimen/offset16"
+                        android:layout_marginEnd="@dimen/offset16"
+                        android:fontFamily="@font/sfprodisplaymedium"
+                        android:includeFontPadding="false"
+                        android:maxLines="1"
+                        android:textColor="@color/text_primary"
+                        android:textSize="@dimen/text14"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@+id/price_icon"
+                        app:layout_constraintTop_toTopOf="@id/price_icon"
+                        tools:text="price"
+                        tools:textColor="@color/black" />
+
+                    <at.blogc.android.views.ExpandableTextView
+                        android:id="@+id/event_description"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/padding_12"
+                        android:layout_marginTop="@dimen/padding_4"
+                        android:layout_marginEnd="@dimen/padding_16"
+                        android:fontFamily="@font/sfprodisplayregular"
+                        android:includeFontPadding="false"
+                        android:lineSpacingExtra="@dimen/padding_6"
+                        android:maxLines="4"
+                        android:text="@string/description_stub"
+                        android:textColor="@color/text_secondary"
+                        android:textSize="@dimen/text12"
+                        app:animation_duration="300"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@id/price_icon"
+                        app:layout_constraintTop_toBottomOf="@+id/event_prices"
+                        tools:textColor="@color/text_secondary" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/button_see_more"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/padding_6"
+                        android:fontFamily="@font/sfprodisplaymedium"
+                        android:paddingEnd="@dimen/padding_12"
+                        android:text="@string/more_button_text"
+                        android:textColor="@color/text_primary"
+                        android:textSize="@dimen/text12"
+                        android:visibility="visible"
+                        app:layout_constraintStart_toStartOf="@+id/event_description"
+                        app:layout_constraintTop_toBottomOf="@+id/event_description" />
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/event_location_icon"
+                        android:layout_width="@dimen/offset16"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/padding_16"
+                        android:layout_marginTop="@dimen/offset22"
+                        android:src="@drawable/ic_location"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/button_see_more" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/event_address"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/padding_12"
+                        android:layout_marginTop="@dimen/padding_19"
+                        android:layout_toStartOf="@+id/event_location_image"
+                        android:layout_toEndOf="@+id/event_location_icon"
+                        android:ellipsize="end"
+                        android:fontFamily="@font/sfprodisplayregular"
+                        android:includeFontPadding="false"
+                        android:lineSpacingExtra="@dimen/padding_6"
+                        android:maxLines="3"
+                        android:textColor="@color/text_secondary"
+                        android:textSize="@dimen/text14"
+                        android:transitionName="event_address"
+                        app:layout_constraintEnd_toStartOf="@+id/event_location_image"
+                        app:layout_constraintStart_toEndOf="@id/event_location_icon"
+                        app:layout_constraintTop_toBottomOf="@+id/button_see_more"
+                        tools:text="location"
+                        tools:textColor="@color/text_secondary" />
+
+                    <androidx.appcompat.widget.AppCompatImageButton
+                        android:id="@+id/event_location_image"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginStart="@dimen/padding_8"
+                        android:layout_marginTop="@dimen/padding_19"
+                        android:layout_marginEnd="@dimen/padding_16"
+                        android:layout_marginBottom="@dimen/padding_6"
+                        android:background="@null"
+                        android:src="@drawable/location"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/button_see_more" />
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/video_card"
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:layout_marginStart="@dimen/padding_16"
+                        android:layout_marginTop="@dimen/padding_32"
+                        android:layout_marginEnd="@dimen/padding_16"
+                        android:elevation="0dp"
+                        app:cardCornerRadius="20dp"
+                        app:layout_constraintDimensionRatio="H,16:9"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/event_location_image">
+
+                        <com.pierfrancescosoffritti.androidyoutubeplayer.core.player.views.YouTubePlayerView
+                            android:id="@+id/you_tube_player"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent" />
+
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/details_performers_recycler"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/offset22"
+                        android:layout_marginBottom="@dimen/padding_100"
+                        android:descendantFocusability="blocksDescendants"
+                        android:focusableInTouchMode="true"
+                        android:nestedScrollingEnabled="false"
+                        android:overScrollMode="never"
+                        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                        app:layout_constraintTop_toBottomOf="@+id/video_card"
+                        tools:itemCount="3"
+                        tools:listitem="@layout/item_details_perfomer" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginBottom="@dimen/offset16"
+                        android:background="#EBEDF5"
+                        app:layout_constraintBottom_toTopOf="@id/text_similar_events" />
+
+                    <TextView
+                        android:id="@+id/text_similar_events"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="@dimen/padding_16"
+                        android:layout_marginTop="@dimen/offset22"
+                        android:fontFamily="@font/sfprodisplaymedium"
+                        android:includeFontPadding="false"
+                        android:text="@string/similar_events"
+                        android:textColor="@color/text_primary"
+                        android:textSize="@dimen/text16"
+                        android:visibility="gone"
+                        app:layout_constraintTop_toBottomOf="@id/details_performers_recycler" />
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/rv_similar_events"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="@dimen/padding_12"
+                        android:layout_marginTop="@dimen/padding_8"
+                        android:layout_marginBottom="@dimen/padding_100"
+                        android:descendantFocusability="blocksDescendants"
+                        android:focusableInTouchMode="true"
+                        android:nestedScrollingEnabled="false"
+                        android:orientation="horizontal"
+                        android:overScrollMode="never"
+                        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                        app:layout_constraintTop_toBottomOf="@id/text_similar_events"
+                        tools:itemCount="3"
+                        tools:listitem="@layout/item_search" />
+
+                    <androidx.constraintlayout.widget.Group
+                        android:id="@+id/group_description"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:visibility="gone"
+                        app:constraint_referenced_ids="button_see_more, event_description" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </androidx.core.widget.NestedScrollView>
+
+            <View
+                android:id="@+id/filters_shadow"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/padding_28"
+                android:background="@drawable/shadow"
+                android:paddingBottom="@dimen/bottom_sheet_minus_padding"
+                android:visibility="gone"
+                app:layout_anchor="@id/bottom_sheet_details_tickets"
+                tools:visibility="visible" />
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:id="@+id/bottom_sheet_details_tickets"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bottom_sheet_rounded"
+                android:clickable="true"
+                android:focusable="true"
+                android:orientation="vertical"
+                android:visibility="gone"
+                app:behavior_hideable="false"
+                app:behavior_peekHeight="@dimen/peek_height_bottom_sheet"
+                app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior">
+
+                <include
+                    android:id="@+id/bottom_sheet_slide_button"
+                    layout="@layout/view_notch" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/details_tickets_group_recycler"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    tools:itemCount="3"
+                    tools:listitem="@layout/item_bottom_sheet" />
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+        </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+        <LinearLayout
+            android:id="@+id/bottom_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_gravity="bottom"
+            android:background="@drawable/bottom_sheet_rounded"
+            android:clickable="true"
+            android:elevation="@dimen/offset10"
+            android:focusable="true"
+            android:orientation="horizontal"
+            android:padding="@dimen/offset24"
+            android:visibility="visible"
+            app:layout_constraintBottom_toBottomOf="parent">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/image_share"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                app:srcCompat="@drawable/share" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/show_all_tickets"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/offset44"
+                android:layout_gravity="center"
+                android:layout_marginStart="@dimen/offset8"
+                android:clickable="false"
+                android:fontFamily="@font/sfprodisplaymedium"
+                android:gravity="center"
+                android:insetTop="0dp"
+                android:insetBottom="0dp"
+                android:lines="1"
+                android:maxLines="1"
+                android:text="@string/details_show_all_tickets"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textSize="@dimen/text15"
+                app:cornerRadius="18dp" />
+
+            <androidx.core.widget.ContentLoadingProgressBar
+                android:id="@+id/prices_loading_view"
+                style="?android:attr/progressBarStyleSmall"
+                android:layout_width="@dimen/button_normal_height"
+                android:layout_height="@dimen/button_normal_height"
+                android:layout_gravity="center|bottom"
+                android:indeterminate="true"
+                android:padding="@dimen/padding_10"
+                android:visibility="@{viewModel.isPriceLoading ? View.VISIBLE : View.INVISIBLE}"
+                tools:background="@color/transparent"
+                tools:visibility="visible" />
+
+        </LinearLayout>
+
+        <androidx.core.widget.ContentLoadingProgressBar
+            android:id="@+id/loading_view"
+            style="?android:attr/progressBarStyleLarge"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:indeterminate="true"
+            android:visibility="@{viewModel.isLoading ? View.VISIBLE : View.INVISIBLE}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:background="@color/transparent"
+            tools:visibility="visible" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

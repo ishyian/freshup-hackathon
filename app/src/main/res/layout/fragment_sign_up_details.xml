@@ -1,0 +1,289 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="viewModel"
+            type="com.melitopolcherry.hackathon.features.login.sign_up_details.SignUpDetailsViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:clickable="true"
+        android:focusable="true"
+        android:fitsSystemWindows="true"
+        android:background="@color/background_primary"
+        tools:context=".features.login.sign_up_details.SignUpDetailsFragment">
+
+        <RelativeLayout
+            android:id="@+id/toolbar"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_width="match_parent"
+            android:layout_height="?android:attr/actionBarSize"
+            android:layout_gravity="top">
+
+            <include
+                android:id="@+id/back_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="@dimen/padding_16"
+                layout="@layout/back_button" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/terms_action_bar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_gravity="center"
+                android:layout_marginStart="@dimen/padding_12"
+                android:layout_toEndOf="@+id/back_button"
+                android:fontFamily="sans-serif"
+                android:text="@string/sign_up"
+                android:textColor="@color/text_primary"
+                android:textSize="@dimen/text_size_20" />
+        </RelativeLayout>
+
+        <ScrollView
+            app:layout_constraintTop_toBottomOf="@+id/toolbar"
+            android:id="@+id/scroll_view"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toTopOf="@+id/separator_bottom">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/terms_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                tools:context=".activities.login.SignUpDetailsActivity">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/sign_up_title"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="@dimen/padding_16"
+                    android:layout_marginTop="@dimen/padding_10"
+                    android:layout_marginEnd="@dimen/padding_16"
+                    android:fontFamily="sans-serif"
+                    android:text="@string/we_have_just_send_you_a_code_to_your_email_please_add_the_code_here"
+                    android:textColor="@color/text_primary"
+                    android:textSize="@dimen/text_size_20" />
+
+                    <TextView
+                        android:id="@+id/email_text_view"
+                        app:layout_constraintTop_toBottomOf="@+id/sign_up_title"
+                        android:layout_marginTop="@dimen/padding_8"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toStartOf="@+id/resend_timer_button"
+                        android:layout_width="0dp"
+                        android:textColor="@color/text_primary"
+                        android:fontFamily="sans-serif"
+                        android:textSize="@dimen/text_size_16"
+                        android:layout_marginStart="@dimen/padding_16"
+                        android:layout_marginEnd="@dimen/padding_8"
+                        tools:text="test"
+                        android:layout_height="wrap_content"/>
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/resend_timer_button"
+                        app:layout_constraintTop_toTopOf="@+id/email_text_view"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@+id/email_text_view"
+                        app:layout_constraintBottom_toBottomOf="@+id/email_text_view"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginEnd="@dimen/padding_16"
+                        android:fontFamily="sans-serif"
+                        android:paddingStart="@dimen/padding_8"
+                        android:paddingTop="@dimen/padding_4"
+                        android:paddingEnd="@dimen/padding_8"
+                        android:paddingBottom="@dimen/padding_4"
+                        android:text="@string/resend"
+                        android:textAlignment="center"
+                        android:textColor="@color/colorAccent"
+                        android:textSize="@dimen/text_size_14" />
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/label_name_edit_text"
+                    app:layout_constraintTop_toBottomOf="@+id/email_text_view"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/padding_16"
+                    android:layout_marginTop="@dimen/padding_10"
+                    android:layout_marginEnd="@dimen/padding_16"
+                    android:fontFamily="sans-serif">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/first_name_edit_text"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/background_secondary"
+                        android:textColorHint="@color/text_secondary"
+                        android:textColor="@color/text_primary"
+                        android:fontFamily="sans-serif"
+                        android:hint="@string/name"
+                        android:imeOptions="actionNext"
+                        android:inputType="textPersonName"
+                        android:maxLines="1"
+                        android:textSize="@dimen/text_size_14" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/label_last_name_edit_text"
+                    app:layout_constraintTop_toBottomOf="@+id/label_name_edit_text"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/padding_16"
+                    android:layout_marginTop="@dimen/padding_10"
+                    android:layout_marginEnd="@dimen/padding_16"
+                    android:fontFamily="sans-serif">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/last_name_edit_text"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/background_secondary"
+                        android:textColorHint="@color/text_secondary"
+                        android:textColor="@color/text_primary"
+                        android:fontFamily="sans-serif"
+                        android:hint="@string/last_name"
+                        android:imeOptions="actionNext"
+                        android:inputType="textPersonName"
+                        android:maxLines="1"
+                        android:textSize="@dimen/text_size_14" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/label_code_edit_text"
+                    app:layout_constraintTop_toBottomOf="@+id/label_last_name_edit_text"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/padding_16"
+                    android:layout_marginTop="@dimen/padding_10"
+                    android:layout_marginEnd="@dimen/padding_16"
+                    android:fontFamily="sans-serif">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/code_edit_text"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/background_secondary"
+                        android:textColorHint="@color/text_secondary"
+                        android:textColor="@color/text_primary"
+                        android:fontFamily="sans-serif"
+                        android:hint="@string/code"
+                        android:imeOptions="actionNext"
+                        android:inputType="text"
+                        android:maxLines="1"
+                        android:textSize="@dimen/text_size_14" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/label_password_edit_text"
+                    app:layout_constraintTop_toBottomOf="@+id/label_code_edit_text"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/padding_16"
+                    android:layout_marginTop="@dimen/padding_10"
+                    android:layout_marginEnd="@dimen/padding_16"
+                    android:fontFamily="sans-serif">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/password_edit_text"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/background_secondary"
+                        android:textColorHint="@color/text_secondary"
+                        android:textColor="@color/text_primary"
+                        android:fontFamily="sans-serif"
+                        android:hint="@string/password"
+                        android:imeOptions="actionDone"
+                        android:inputType="textPassword"
+                        android:maxLines="1"
+                        android:textSize="@dimen/text_size_14" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/sign_up_button"
+                    app:layout_constraintTop_toBottomOf="@+id/label_password_edit_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/button_normal_height"
+                    android:layout_marginStart="@dimen/padding_16"
+                    android:layout_marginTop="@dimen/padding_50"
+                    android:layout_marginEnd="@dimen/padding_16"
+                    android:layout_marginBottom="@dimen/padding_16"
+                    app:strokeColor="@color/separator"
+                    app:strokeWidth="1dp"
+                    android:elevation="0dp"
+                    app:elevation="0dp"
+                    android:stateListAnimator="@null"
+                    android:backgroundTint="@color/background_primary"
+                    android:fontFamily="sans-serif-medium"
+                    android:insetTop="0dp"
+                    android:clickable="@{viewModel.isLoading ? false : true}"
+                    android:insetBottom="0dp"
+                    android:text="Sign Up"
+                    android:textAllCaps="false"
+                    android:textColor="@color/colorAccent"
+                    android:textSize="@dimen/text_size_16"
+                    app:cornerRadius="20dp" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </ScrollView>
+
+            <View
+                android:id="@+id/separator_bottom"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                app:layout_constraintBottom_toTopOf="@+id/login_terms_text_view"
+                android:background="@color/separator" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/login_terms_text_view"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:gravity="center"
+                android:paddingTop="@dimen/padding_16"
+                android:paddingBottom="@dimen/padding_16"
+                android:text="@string/app_terms"
+                android:textAlignment="center"
+                android:textColor="@color/text_primary"
+                android:textSize="@dimen/text_size_12" />
+
+        <androidx.core.widget.ContentLoadingProgressBar
+            android:id="@+id/loading_view"
+            android:visibility="@{viewModel.isLoading ? View.VISIBLE : View.INVISIBLE}"
+            style="?android:attr/progressBarStyleLarge"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_gravity="center"
+            android:indeterminate="true"
+            tools:background="@color/transparent"
+            tools:visibility="visible" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

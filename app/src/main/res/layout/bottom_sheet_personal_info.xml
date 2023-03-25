@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="viewModel"
+            type="com.melitopolcherry.hackathon.features.bottom.PersonalInfoViewModel" />
+    </data>
+
+    <RelativeLayout
+        android:id="@+id/bottom_sheet_user_info"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:background="@drawable/bottom_sheet_rounded"
+        android:orientation="vertical"
+        app:behavior_hideable="true"
+        app:behavior_peekHeight="0dp"
+        app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior">
+
+        <include
+            android:id="@+id/bottom_sheet_slide_button"
+            layout="@layout/view_notch" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/first_name_text_view"
+            android:layout_width="wrap_content"
+            android:textColor="@color/text_secondary"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/bottom_sheet_slide_button"
+            android:layout_marginStart="@dimen/padding_16"
+            android:layout_marginTop="@dimen/padding_12"
+            android:fontFamily="sans-serif"
+            android:text="@string/first_name"
+            android:textSize="@dimen/text_size_12"
+            tools:textColor="@color/gray_color" />
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/first_name_edit_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColorHint="@color/text_secondary"
+            android:layout_below="@+id/first_name_text_view"
+            android:layout_marginStart="@dimen/padding_16"
+            android:layout_marginTop="@dimen/padding_4"
+            android:layout_marginEnd="@dimen/padding_16"
+            android:textColor="@color/text_primary"
+            android:layout_marginBottom="@dimen/padding_4"
+            android:background="@android:color/transparent"
+            android:fontFamily="sans-serif-light"
+            android:hint="@string/name"
+            android:imeOptions="actionNext"
+            android:inputType="text"
+            android:maxLines="1"
+            android:textSize="@dimen/text_size_14" />
+
+        <View
+            android:id="@+id/checkout_line_separator"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/separator"
+            android:layout_below="@+id/first_name_edit_text"
+            android:layout_marginStart="@dimen/padding_16"
+            android:layout_marginEnd="@dimen/padding_16" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/second_name_text_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/text_secondary"
+            android:layout_below="@+id/checkout_line_separator"
+            android:layout_marginStart="@dimen/padding_16"
+            android:layout_marginTop="@dimen/padding_12"
+            android:layout_marginEnd="@dimen/padding_16"
+            android:fontFamily="sans-serif"
+            android:text="@string/last_name"
+            android:textSize="@dimen/text_size_12"
+            tools:textColor="@color/gray_color" />
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/second_name_edit_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/text_primary"
+            android:layout_below="@+id/second_name_text_view"
+            android:layout_marginStart="@dimen/padding_16"
+            android:layout_marginTop="@dimen/padding_4"
+            android:layout_marginEnd="@dimen/padding_16"
+            android:layout_marginBottom="@dimen/padding_4"
+            android:textColorHint="@color/text_secondary"
+            android:background="@android:color/transparent"
+            android:fontFamily="sans-serif-light"
+            android:hint="@string/surname"
+            android:imeOptions="actionNext"
+            android:inputType="text"
+            android:lines="1"
+            android:maxLines="1"
+            android:textSize="@dimen/text_size_14" />
+
+        <View
+            android:id="@+id/checkout1_line_separator"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/separator"
+            android:layout_below="@+id/second_name_edit_text"
+            android:layout_marginStart="@dimen/padding_16"
+            android:layout_marginEnd="@dimen/padding_16" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/repeat_pswd_text_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/text_secondary"
+            android:layout_below="@+id/checkout1_line_separator"
+            android:layout_marginStart="@dimen/padding_16"
+            android:layout_marginTop="@dimen/padding_12"
+            android:layout_marginEnd="@dimen/padding_16"
+            android:fontFamily="sans-serif"
+            android:text="@string/email"
+            android:textSize="@dimen/text_size_12"
+            tools:textColor="@color/gray_color" />
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/email_edit_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/text_primary"
+            android:layout_below="@+id/repeat_pswd_text_view"
+            android:layout_marginStart="@dimen/padding_16"
+            android:layout_marginTop="@dimen/padding_4"
+            android:layout_marginEnd="@dimen/padding_16"
+            android:layout_marginBottom="@dimen/padding_4"
+            android:textColorHint="@color/text_secondary"
+            android:background="@android:color/transparent"
+            android:fontFamily="sans-serif-light"
+            android:hint="@string/email"
+            android:imeOptions="actionDone"
+            android:inputType="textEmailAddress"
+            android:lines="1"
+            android:maxLines="1"
+            android:textSize="@dimen/text_size_14" />
+
+        <View
+            android:id="@+id/checkout3_line_separator"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/separator"
+            android:layout_below="@+id/email_edit_text"
+            android:layout_marginStart="@dimen/padding_16"
+            android:layout_marginEnd="@dimen/padding_16" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/save_button"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/button_normal_height"
+            android:layout_below="@+id/checkout3_line_separator"
+            android:layout_gravity="bottom|center"
+            android:layout_marginStart="@dimen/padding_16"
+            android:layout_marginTop="@dimen/padding_22"
+            android:layout_marginEnd="@dimen/padding_16"
+            android:layout_marginBottom="@dimen/padding_22"
+            android:fontFamily="sans-serif"
+            android:insetTop="0dp"
+            android:insetBottom="0dp"
+            android:text="@string/save_button_text"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textSize="@dimen/text_size_16"
+            app:cornerRadius="20dp" />
+
+        <androidx.core.widget.ContentLoadingProgressBar
+            android:id="@+id/loading_view"
+            style="?android:attr/progressBarStyleLarge"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:layout_gravity="center"
+            android:indeterminate="true"
+            android:visibility="@{viewModel.isLoading ? View.VISIBLE : View.INVISIBLE}"
+            tools:background="@color/transparent"
+            tools:visibility="visible" />
+
+    </RelativeLayout>
+</layout>

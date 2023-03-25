@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "880779730255",
+    "project_id": "hackathon23-1c03a",
+    "storage_bucket": "hackathon23-1c03a.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:880779730255:android:a94d7f95f1a79317d8f93a",
+        "android_client_info": {
+          "package_name": "com.melitopolcherry.hackathon"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "880779730255-bcmf8h39ofr5924o4ia4g1vh3evrgabn.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDorxUlkaAEGeopyYurPXld3JSdYp9HnIY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "880779730255-bcmf8h39ofr5924o4ia4g1vh3evrgabn.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

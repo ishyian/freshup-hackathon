@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="viewModel"
+            type="com.melitopolcherry.hackathon.features.profile.ProfileSuggestedViewModel" />
+    </data>
+
+    <RelativeLayout
+        android:id="@+id/suggested_main"
+        android:fitsSystemWindows="false"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+            android:id="@+id/swipe_to_refresh"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@+id/load_more_view">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/profile_recycler_view"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:visibility="@{viewModel.isLoading ? View.INVISIBLE : View.VISIBLE}"
+                app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+                app:layout_scrollFlags="scroll|snap"
+                app:spanCount="2"
+                tools:listitem="@layout/item_suggested" />
+
+        </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+        <androidx.core.widget.ContentLoadingProgressBar
+            android:id="@+id/load_more_view"
+            style="?android:attr/progressBarStyleSmall"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_gravity="center|bottom"
+            android:indeterminate="true"
+            android:padding="@dimen/padding_10"
+            android:visibility="@{viewModel.isLoadingMore ? View.VISIBLE : View.GONE}"
+            tools:background="@color/transparent"
+            tools:visibility="visible" />
+
+        <include
+            android:id="@+id/no_suggested_layout"
+            layout="@layout/empty_state_suggested"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true" />
+
+        <androidx.core.widget.ContentLoadingProgressBar
+            android:id="@+id/loading_view"
+            style="?android:attr/progressBarStyleLarge"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:layout_gravity="center"
+            android:indeterminate="true"
+            android:visibility="@{viewModel.isLoading ? View.VISIBLE : View.GONE}"
+            tools:background="@color/transparent"
+            tools:visibility="visible" />
+
+    </RelativeLayout>
+</layout>

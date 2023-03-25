@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+<FrameLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.cardview.widget.CardView
+        android:layout_gravity="center"
+        android:layout_width="match_parent"
+        app:cardCornerRadius="16dp"
+        android:layout_margin="@dimen/padding_16"
+        android:backgroundTint="@color/background_primary"
+        android:background="@color/background_primary"
+        tools:context=".features.dialogs.TicketQuantityDialog"
+        android:layout_height="wrap_content">
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:id="@+id/checkout_count_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/checkout_bottom_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/text_primary"
+                android:layout_margin="@dimen/padding_16"
+                android:fontFamily="sans-serif"
+                android:text="@string/amount_of_tickets"
+                android:textSize="@dimen/text_size_14" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/checkout_count_recycler"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/padding_16"
+                android:clipToPadding="false"
+                android:orientation="horizontal"
+                android:paddingTop="@dimen/padding_10"
+                android:paddingBottom="@dimen/padding_10"
+                android:choiceMode="singleChoice"
+                android:listSelector="@drawable/quantity_selector"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                tools:listitem="@layout/item_quantity_ticket" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/cancel_button"
+                android:text="@string/cancel"
+                android:textSize="@dimen/text_size_12"
+                android:textColor="@color/text_accent"
+                android:background="@color/transparent"
+                android:layout_gravity="center"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+    </androidx.cardview.widget.CardView>
+</FrameLayout>
+</layout>

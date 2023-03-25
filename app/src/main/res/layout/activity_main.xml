@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/map_home_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fitsSystemWindows="false"
+        android:background="@color/background_primary"
+        android:orientation="vertical"
+        tools:context=".features.main.MainActivity">
+
+        <androidx.fragment.app.FragmentContainerView
+            android:id="@+id/fragment_container"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_above="@+id/navigation_tabs"
+            android:background="@null"
+            android:overScrollMode="never"
+            app:layout_constraintBottom_toTopOf="@+id/navigation_tabs_separator"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:background="@color/white" />
+
+        <View
+            android:id="@+id/navigation_tabs_separator"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_above="@+id/navigation_tabs"
+            android:background="@color/separator"
+            app:layout_constraintBottom_toTopOf="@+id/navigation_tabs"
+            app:layout_constraintTop_toBottomOf="@+id/fragment_container"
+            tools:background="@color/separator" />
+
+        <com.google.android.material.bottomnavigation.BottomNavigationView
+            android:id="@id/navigation_tabs"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/window_background"
+            android:textSize="8sp"
+            app:elevation="0dp"
+            android:fitsSystemWindows="false"
+            app:itemHorizontalTranslationEnabled="false"
+            app:itemIconTint="@color/bottom_navigation_selector"
+            app:itemTextColor="@color/bottom_navigation_selector"
+            app:labelVisibilityMode="labeled"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:menu="@menu/bottom_nav_menu"
+            tools:ignore="SmallSp" />
+
+        <androidx.core.widget.ContentLoadingProgressBar
+            android:id="@+id/progressBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

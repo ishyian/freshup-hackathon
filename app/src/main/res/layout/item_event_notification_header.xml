@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.AppCompatTextView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/text_title"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="@dimen/offset8"
+    android:layout_marginHorizontal="@dimen/offset16"
+    android:layout_marginBottom="@dimen/offset24"
+    android:fontFamily="@font/sansation_regular"
+    android:textColor="@color/color_2"
+    android:textSize="@dimen/text16"
+    tools:text="Налаштування" />
+

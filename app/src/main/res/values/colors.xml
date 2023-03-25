@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="colorPrimary">#FF0545</color>
+    <color name="colorPrimaryDark">#FF0545</color>
+    <color name="colorAccent">#FF0545</color>
+
+    <color name="bottom_sheet_background">#FFFFFF</color>
+    <color name="seating_chart_background">#FFFFFF</color>
+
+    <color name="background_primary">#FFFFFF</color>
+    <color name="background_secondary">#F7F8FD</color>
+    <color name="background_third">#F7F8FD</color>
+
+    <color name="text_accent">@color/colorAccent</color>
+    <color name="text_primary">#000000</color>
+    <color name="text_secondary">#8f8f8f</color>
+
+    <color name="separator">#E3E8FA</color>
+
+    <color name="tab_unselected">#AAAAAA</color>
+
+    <color name="notch_color">#999999</color>
+    <color name="weather_icon">#CCCCCC</color>
+
+    <color name="gray70">#4D4D4D</color>
+    <color name="gray50">#808080</color>
+    <color name="gray40">#999999</color>
+    <color name="gray30">#B3B3B3</color>
+    <color name="gray15">#D9D9D9</color>
+
+    <color name="gray500">#777A8A</color>
+
+    <color name="light_blue_color">#E2E5EA</color>
+    <color name="green_color">#7AC512</color>
+    <color name="blue_color">#0F76FF</color>
+    <color name="white">#FFFFFF</color>
+    <color name="black">#000000</color>
+    <color name="black_back">#1c1c1c</color>
+    <color name="transparent">#00000000</color>
+    <color name="gray_color">#9A9A9A</color>
+    <color name="black_overlay">#66000000</color>
+    <color name="text_gray_dark">#3F3D56</color>
+
+    <color name="protect_button_background">#FDEFF3</color>
+    <color name="pdf_view_background">#EEEEF4</color>
+    <color name="ripple_active">#F3F3F3</color>
+
+    <color name="window_background">#FDF8EE</color>
+    <color name="primary_text_color">#452158</color>
+    <color name="color_2">#2E4C68</color>
+    <color name="color_4">#1C4E5B</color>
+    <color name="color_1">#E2F3FD</color>
+</resources>

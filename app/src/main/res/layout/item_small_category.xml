@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/small_category_card"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_centerVertical="true"
+    android:layout_marginStart="@dimen/padding_8"
+    android:layout_marginTop="@dimen/padding_4"
+    android:layout_marginBottom="@dimen/padding_8"
+    android:background="@drawable/filters_button_background"
+    android:paddingStart="@dimen/padding_4"
+    android:paddingEnd="@dimen/padding_4"
+    android:elevation="@dimen/offset6"
+    app:cardCornerRadius="@dimen/small_categories_radius"
+    app:strokeWidth="0dp">
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/small_category_title_text_view"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/small_categories_height"
+        android:layout_gravity="center"
+        android:drawablePadding="@dimen/padding_8"
+        android:fontFamily="@font/sfprodisplaymedium"
+        android:gravity="center_vertical"
+        android:maxLines="1"
+        android:paddingStart="@dimen/padding_10"
+        android:paddingEnd="@dimen/padding_10"
+        android:textColor="@color/text_primary"
+        android:textSize="@dimen/text_size_12"
+        tools:drawableStart="@drawable/ic_sports"
+        tools:text="text category"
+        tools:textColor="@color/black" />
+
+</FrameLayout>

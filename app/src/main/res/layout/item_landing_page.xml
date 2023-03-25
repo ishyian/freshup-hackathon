@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/search_item_background"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="?android:attr/selectableItemBackground"
+    android:paddingStart="@dimen/padding_16"
+    android:paddingTop="@dimen/padding_8"
+    android:paddingEnd="@dimen/padding_16">
+
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/event_image"
+        android:layout_width="@dimen/card_image_size"
+        android:layout_height="@dimen/card_image_size"
+        android:layout_centerVertical="true"
+        android:layout_gravity="center_vertical"
+        android:layout_marginEnd="@dimen/padding_16"
+        android:layout_marginBottom="@dimen/padding_16"
+        android:scaleType="centerCrop"
+        app:shapeAppearanceOverlay="@style/RoundedImageView"
+        tools:src="@drawable/placeholder_event" />
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginEnd="@dimen/padding_16"
+        android:layout_toEndOf="@+id/event_image"
+        android:gravity="center_vertical"
+        android:orientation="vertical">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/item_title"
+            android:fontFamily="sans-serif"
+            android:textSize="@dimen/text_size_14"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/text_primary"
+            tools:text="TEXT" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/item_date"
+            android:fontFamily="sans-serif-light"
+            android:textSize="@dimen/text_size_12"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/padding_4"
+            android:textColor="@color/text_secondary"
+            tools:text="TEXT"
+            tools:textColor="@color/gray_color" />
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+    <View
+        android:id="@+id/line_separator"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:paddingBottom="@dimen/padding_8"
+        android:layout_below="@+id/event_image"
+        android:background="@color/separator"
+        android:visibility="visible" />
+</RelativeLayout>

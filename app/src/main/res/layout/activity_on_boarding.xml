@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/window_background"
+        android:fitsSystemWindows="true"
+        android:orientation="vertical"
+        tools:context=".features.onboarding.OnBoardingActivity">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/appCompatImageView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"
+            app:srcCompat="@drawable/onboarding_background" />
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/offset50"
+            android:layout_marginTop="@dimen/offset120"
+            android:fontFamily="@font/sansation_bold"
+            android:text="Навчатися\nзручно"
+            android:textColor="@color/primary_text_color"
+            android:textSize="@dimen/text40"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/appCompatImageView" />
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/offset50"
+            android:layout_marginTop="@dimen/offset16"
+            android:fontFamily="@font/sansation_regular"
+            android:text="Твій особистий путівник"
+            android:textColor="@color/color_2"
+            android:textSize="@dimen/text16"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/textView" />
+
+        <com.google.android.material.button.MaterialButton
+            android:layout_width="wrap_content"
+            android:id="@+id/btn_start"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/offset16"
+            android:backgroundTint="@color/color_4"
+            android:fontFamily="@font/sansation_regular"
+            android:text="Розпочати"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textSize="@dimen/text16"
+            app:cornerRadius="@dimen/offset8"
+            app:icon="@drawable/ic_arrow_right_alt_24"
+            app:layout_constraintStart_toStartOf="@+id/textView2"
+            app:layout_constraintTop_toBottomOf="@+id/textView2" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

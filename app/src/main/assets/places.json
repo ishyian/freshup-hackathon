@@ -1,0 +1,146 @@
+[
+  {
+    "name": "Гуртожиток МДПУ №1",
+    "address": "вулиця Університетська, 41, Мелітополь, Запорізька область",
+    "longitude": "35.375850877831496",
+    "latitude": "46.84432587617289",
+    "image": "https://lh3.googleusercontent.com/u/0/drive-viewer/AAOQEOTZbPDQyzSM_Cdi9TjHLGpMmDMZK2ohBuCU9u4XMkmDQIuWBuDqCgEPYPB7o6vxFZfLwT67k2GEdu4K0DmdmtDiRC4isg=w2880-h1472",
+    "type": "hostel",
+    "facultyId": "fac1"
+  },
+  {
+    "name": "Їдальня \"Шалений кухар\"",
+    "address": "вулиця Гетьманська, 18, Мелітополь, Запорізька область",
+    "longitude": "35.37902148589989",
+    "latitude": "46.84245286718838",
+    "image": "https://lh3.googleusercontent.com/u/0/drive-viewer/AAOQEOSi6_7r3LuJqUm2tdeMhf5wPVdF_xmPSiL5wAu3YtCY-smiHiY3DVvbXDbmb0SLAMG-vqmOIfVeaIGeBjE_m2VXSFoXog=w2880-h1472",
+    "type": "diner",
+    "facultyId": "fac1"
+  },
+  {
+    "name": "Спортивна зала",
+    "address": "вулиця Гетьманська, 10, Мелітополь, Запорізька область",
+    "longitude": "35.38292843435228",
+    "latitude": "46.84225214639486",
+    "image": "https://sportsvit.com.ua/sites/default/files/inline-images/sportsvit_33_of_37.jpg",
+    "type": "gym",
+    "facultyId": "fac1"
+  },
+  {
+    "name": "Медичний пункт",
+    "address": "проспект Богдана Хмельницького, 46, Мелітополь, Запорізька область",
+    "longitude": "35.37073283807904",
+    "latitude": "46.83940092813599",
+    "image": "https://cdn1.pokupon.ua/uploaded/merchant_page_images/301167/data/main720x340/мел_1.jpg",
+    "type": "hospital",
+    "facultyId": "fac1"
+  },
+  {
+    "name": "Гуртожиток МДПУ №1",
+    "address": "вулиця Університетська, 41, Мелітополь, Запорізька область",
+    "longitude": "35.375850877831496",
+    "latitude": "46.84432587617289",
+    "image": "https://lh3.googleusercontent.com/u/0/drive-viewer/AAOQEOTZbPDQyzSM_Cdi9TjHLGpMmDMZK2ohBuCU9u4XMkmDQIuWBuDqCgEPYPB7o6vxFZfLwT67k2GEdu4K0DmdmtDiRC4isg=w2880-h1472",
+    "type": "hostel",
+    "facultyId": "fac2"
+  },
+  {
+    "name": "Їдальня \"Шалений кухар\"",
+    "address": "вулиця Гетьманська, 18, Мелітополь, Запорізька область",
+    "longitude": "35.37902148589989",
+    "latitude": "46.84245286718838",
+    "image": "https://lh3.googleusercontent.com/u/0/drive-viewer/AAOQEOSi6_7r3LuJqUm2tdeMhf5wPVdF_xmPSiL5wAu3YtCY-smiHiY3DVvbXDbmb0SLAMG-vqmOIfVeaIGeBjE_m2VXSFoXog=w2880-h1472",
+    "type": "diner",
+    "facultyId": "fac2"
+  },
+  {
+    "name": "Спортивна зала",
+    "address": "вулиця Гетьманська, 10, Мелітополь, Запорізька область",
+    "longitude": "35.38292843435228",
+    "latitude": "46.84225214639486",
+    "image": "https://sportsvit.com.ua/sites/default/files/inline-images/sportsvit_33_of_37.jpg",
+    "type": "gym",
+    "facultyId": "fac2"
+  },
+  {
+    "name": "Медичний пункт",
+    "address": "проспект Богдана Хмельницького, 46, Мелітополь, Запорізька область",
+    "longitude": "35.37073283807904",
+    "latitude": "46.83940092813599",
+    "image": "https://cdn1.pokupon.ua/uploaded/merchant_page_images/301167/data/main720x340/мел_1.jpg",
+    "type": "hospital",
+    "facultyId": "fac2"
+  },
+  {
+    "name": "Гуртожиток МДПУ №2",
+    "address": "вулиця Івана Алексєєва, 9, Мелітополь, Запорізька область",
+    "longitude": "35.35598112063811",
+    "latitude": "46.835148435799184",
+    "image": "https://lh3.googleusercontent.com/u/0/drive-viewer/AAOQEOT7hX84W1yC3vrzB8ADLcBrKqeNnENNoFRGS4ynkmaIOi2ltgcNjVbglY69Q11gDBPQODj6ugwuMPeK3MeqUF9sNvwW=w2880-h1472",
+    "type": "hostel",
+    "facultyId": "fac3"
+  },
+  {
+    "name": "Спортивна зала",
+    "address": "вулиця Гетьманська, 10, Мелітополь, Запорізька область",
+    "longitude": "35.38292843435228",
+    "latitude": "46.84225214639486",
+    "image": "https://sportsvit.com.ua/sites/default/files/inline-images/sportsvit_33_of_37.jpg",
+    "type": "gym",
+    "facultyId": "fac3"
+  },
+  {
+    "name": "Медичний пункт",
+    "address": "проспект Богдана Хмельницького, 46, Мелітополь, Запорізька область",
+    "longitude": "35.37073283807904",
+    "latitude": "46.83940092813599",
+    "image": "https://cdn1.pokupon.ua/uploaded/merchant_page_images/301167/data/main720x340/мел_1.jpg",
+    "type": "hospital",
+    "facultyId": "fac3"
+  },
+  {
+    "name": "Їдальня Jump Pizza",
+    "address": "вулиця Гетьманська, 18\/2, Мелітополь, Запорізька область, 72300",
+    "longitude": "35.38047548162119",
+    "latitude": "46.84234601833185",
+    "image": "https://lh3.googleusercontent.com/u/0/drive-viewer/AAOQEOQ-6jtAURpW8sjIs4k3t6lBrjKnbl-slk-n_TI3hAwsUDJ-J3l6OK5qHDpDswzq1gq2Fyz5305Gln62DqW57lK0-KcJqg=w2880-h1472",
+    "type": "diner",
+    "facultyId": "fac3"
+  },
+  {
+    "name": "Гуртожиток МДПУ №2",
+    "address": "вулиця Івана Алексєєва, 9, Мелітополь, Запорізька область",
+    "longitude": "35.35598112063811",
+    "latitude": "46.835148435799184",
+    "image": "https://lh3.googleusercontent.com/u/0/drive-viewer/AAOQEOT7hX84W1yC3vrzB8ADLcBrKqeNnENNoFRGS4ynkmaIOi2ltgcNjVbglY69Q11gDBPQODj6ugwuMPeK3MeqUF9sNvwW=w2880-h1472",
+    "type": "hostel",
+    "facultyId": "fac4"
+  },
+  {
+    "name": "Спортивна зала",
+    "address": "вулиця Гетьманська, 10, Мелітополь, Запорізька область",
+    "longitude": "35.38292843435228",
+    "latitude": "46.84225214639486",
+    "image": "https://sportsvit.com.ua/sites/default/files/inline-images/sportsvit_33_of_37.jpg",
+    "type": "gym",
+    "facultyId": "fac4"
+  },
+  {
+    "name": "Медичний пункт",
+    "address": "проспект Богдана Хмельницького, 46, Мелітополь, Запорізька область",
+    "longitude": "35.37073283807904",
+    "latitude": "46.83940092813599",
+    "image": "https://cdn1.pokupon.ua/uploaded/merchant_page_images/301167/data/main720x340/мел_1.jpg",
+    "type": "hospital",
+    "facultyId": "fac4"
+  },
+  {
+    "name": "Їдальня \"Шалений кухар\"",
+    "address": "вулиця Гетьманська, 18, Мелітополь, Запорізька область",
+    "longitude": "35.37902148589989",
+    "latitude": "46.84245286718838",
+    "image": "https://lh3.googleusercontent.com/u/0/drive-viewer/AAOQEOSi6_7r3LuJqUm2tdeMhf5wPVdF_xmPSiL5wAu3YtCY-smiHiY3DVvbXDbmb0SLAMG-vqmOIfVeaIGeBjE_m2VXSFoXog=w2880-h1472",
+    "type": "diner",
+    "facultyId": "fac4"
+  }
+]

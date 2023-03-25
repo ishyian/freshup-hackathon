@@ -1,0 +1,375 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="viewModel"
+            type="com.melitopolcherry.hackathon.features.bottom.PaymentViewModel" />
+    </data>
+
+    <RelativeLayout
+        android:id="@+id/bottom_sheet_payment"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:background="@drawable/bottom_sheet_rounded"
+        android:orientation="vertical"
+        app:behavior_hideable="true"
+        app:behavior_peekHeight="0dp"
+        app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior">
+
+        <include
+            android:id="@+id/bottom_sheet_slide_button"
+            layout="@layout/view_notch" />
+
+        <com.stripe.android.view.CardInputWidget
+            android:id="@+id/card_view"
+            android:theme="@style/CardInputWidget"
+            android:layout_marginStart="@dimen/padding_16"
+            android:layout_marginEnd="@dimen/padding_16"
+            android:layout_marginTop="@dimen/padding_8"
+            android:layout_marginBottom="@dimen/padding_10"
+            android:layout_below="@+id/bottom_sheet_slide_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/holder_title"
+            android:textColor="@color/text_primary"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/card_view"
+            android:layout_marginStart="@dimen/padding_16"
+            android:layout_marginTop="@dimen/padding_8"
+            android:layout_marginBottom="@dimen/padding_10"
+            android:fontFamily="sans-serif"
+            android:text="@string/holder_name"
+            android:textSize="@dimen/text_size_14"
+            tools:textColor="@color/black" />
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/holder_edit_text"
+            android:layout_width="match_parent"
+            android:textColorHint="@color/text_secondary"
+            android:textColor="@color/text_primary"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/holder_title"
+            android:layout_marginBottom="@dimen/padding_10"
+            android:background="@android:color/transparent"
+            android:fontFamily="sans-serif-light"
+            android:hint="@string/holder_name"
+            android:imeOptions="actionNext"
+            android:inputType="textCapCharacters"
+            android:lines="1"
+            android:maxLines="1"
+            android:paddingStart="@dimen/padding_16"
+            android:paddingEnd="@dimen/padding_16"
+            android:textSize="@dimen/text_size_14" />
+
+        <View
+            android:id="@+id/line_separator"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/separator"
+            android:layout_below="@+id/holder_edit_text"
+            android:layout_marginStart="@dimen/padding_16"
+            android:layout_marginEnd="@dimen/padding_16" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/address_title_tv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/text_primary"
+            android:layout_below="@+id/line_separator"
+            android:layout_marginStart="@dimen/padding_16"
+            android:layout_marginTop="@dimen/padding_12"
+            android:layout_marginEnd="@dimen/padding_16"
+            android:layout_toStartOf="@+id/change_address_button"
+            android:fontFamily="sans-serif"
+            android:text="@string/billing_address"
+            android:textSize="@dimen/text_size_14" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/change_address_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/line_separator"
+            android:layout_alignBaseline="@+id/address_title_tv"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="@dimen/padding_16"
+            android:fontFamily="sans-serif"
+            android:padding="@dimen/padding_4"
+            android:paddingStart="@dimen/padding_4"
+            android:paddingTop="@dimen/padding_4"
+            android:paddingEnd="0dp"
+            android:paddingBottom="@dimen/padding_4"
+            android:text="@string/payment_button_change_address"
+            android:textColor="@color/colorAccent"
+            android:textSize="@dimen/text_size_14" />
+
+        <RelativeLayout
+            android:id="@+id/street_zip_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/address_title_tv">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/title_street_text_view"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/padding_16"
+                android:textColor="@color/text_secondary"
+                android:layout_marginTop="@dimen/padding_10"
+                android:layout_marginEnd="@dimen/padding_8"
+                android:fontFamily="sans-serif"
+                android:layout_toStartOf="@+id/code_layout"
+                android:text="@string/payment_label_street"
+                android:textSize="@dimen/text_size_12"
+                tools:textColor="@color/gray_color" />
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/street_edit_text"
+                android:layout_width="match_parent"
+                android:textColorHint="@color/text_secondary"
+                android:layout_height="wrap_content"
+                android:textColor="@color/text_primary"
+                android:layout_below="@+id/title_street_text_view"
+                android:layout_marginStart="@dimen/padding_16"
+                android:layout_marginTop="@dimen/padding_4"
+                android:layout_marginEnd="@dimen/padding_8"
+                android:layout_marginBottom="@dimen/padding_4"
+                android:background="@android:color/transparent"
+                android:layout_toStartOf="@+id/code_layout"
+                android:fontFamily="sans-serif-light"
+                android:imeOptions="actionNext"
+                android:inputType="text"
+                android:lines="1"
+                android:maxLines="1"
+                android:textSize="@dimen/text_size_14" />
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:id="@+id/code_layout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/padding_10"
+                android:layout_marginEnd="@dimen/padding_28"
+                android:layout_marginStart="@dimen/padding_8"
+                android:layout_alignParentEnd="true"
+                android:gravity="center"
+                android:orientation="vertical"
+                tools:ignore="RtlSymmetry">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/title_code_text_view"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="sans-serif"
+                    android:textColor="@color/text_secondary"
+                    android:text="@string/payment_label_zip_code"
+                    android:textSize="@dimen/text_size_12"
+                    tools:textColor="@color/gray_color" />
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/code_edit_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/padding_4"
+                    android:textColorHint="@color/text_secondary"
+                    android:textColor="@color/text_primary"
+                    android:background="@android:color/transparent"
+                    android:fontFamily="sans-serif-light"
+                    android:imeOptions="actionNext"
+                    android:inputType="textPostalAddress"
+                    android:maxLength="6"
+                    android:maxLines="1"
+                    android:textAlignment="center"
+                    android:textSize="@dimen/text_size_14" />
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+        </RelativeLayout>
+
+        <View
+            android:background="@color/separator"
+            android:id="@+id/line_separator1"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_below="@+id/street_zip_layout"
+            android:layout_marginStart="@dimen/padding_16"
+            android:layout_marginEnd="@dimen/padding_16" />
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:id="@+id/address_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/line_separator1"
+            android:layout_marginStart="@dimen/padding_16"
+            android:layout_marginTop="@dimen/padding_10"
+            android:layout_marginEnd="@dimen/padding_16"
+            android:layout_marginBottom="@dimen/padding_4"
+            android:orientation="horizontal"
+            android:weightSum="1">
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:id="@+id/city_layout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/padding_8"
+                android:layout_marginEnd="@dimen/padding_8"
+                android:layout_weight="0.5"
+                android:gravity="center"
+                android:orientation="vertical"
+                tools:ignore="RtlSymmetry">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/title_city_text_view"
+                    android:layout_width="wrap_content"
+                    android:textColor="@color/text_secondary"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="sans-serif"
+                    android:gravity="center"
+                    android:text="@string/payment_label_city"
+                    android:textSize="@dimen/text_size_12"
+                    tools:textColor="@color/gray_color" />
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/city_edit_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/padding_4"
+                    android:textColorHint="@color/text_secondary"
+                    android:textColor="@color/text_primary"
+                    android:background="@android:color/transparent"
+                    android:fontFamily="sans-serif-light"
+                    android:gravity="center"
+                    android:imeOptions="actionNext"
+                    android:inputType="text"
+                    android:maxLines="1"
+                    android:textAlignment="center"
+                    android:textSize="@dimen/text_size_14" />
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:id="@+id/address_state_layout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/padding_8"
+                android:layout_weight="0.25"
+                android:gravity="center"
+                android:orientation="vertical"
+                tools:ignore="RtlSymmetry">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/title_state_text_view"
+                    android:layout_width="wrap_content"
+                    android:textColor="@color/text_secondary"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="sans-serif"
+                    android:text="@string/state_region"
+                    android:textSize="@dimen/text_size_12"
+                    tools:textColor="@color/gray_color" />
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/state_edit_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/padding_4"
+                    android:textColorHint="@color/text_secondary"
+                    android:textColor="@color/text_primary"
+                    android:background="@android:color/transparent"
+                    android:fontFamily="sans-serif-light"
+                    android:imeOptions="actionNext"
+                    android:inputType="text"
+                    android:maxLength="4"
+                    android:maxLines="1"
+                    android:textAlignment="center"
+                    android:textSize="@dimen/text_size_14" />
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:id="@+id/country_layout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/padding_8"
+                android:layout_weight="0.25"
+                android:gravity="center"
+                android:orientation="vertical"
+                tools:ignore="RtlSymmetry">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/country_text_view"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="sans-serif"
+                    android:text="@string/country"
+                    android:textColor="@color/text_secondary"
+                    android:textSize="@dimen/text_size_12"
+                    tools:textColor="@color/gray_color" />
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/country_edit_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/padding_4"
+                    android:textColorHint="@color/text_secondary"
+                    android:textColor="@color/text_primary"
+                    android:background="@android:color/transparent"
+                    android:fontFamily="sans-serif-light"
+                    android:imeOptions="actionDone"
+                    android:inputType="textPostalAddress"
+                    android:maxLength="6"
+                    android:maxLines="1"
+                    android:textAlignment="center"
+                    android:textSize="@dimen/text_size_14" />
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+        <View
+            android:background="@color/separator"
+            android:id="@+id/checkout1_line_separator"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_below="@+id/address_layout" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/save_button"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/button_normal_height"
+            android:layout_below="@+id/checkout1_line_separator"
+            android:layout_marginStart="@dimen/padding_25"
+            android:layout_marginTop="@dimen/padding_28"
+            android:layout_marginEnd="@dimen/padding_25"
+            android:layout_marginBottom="@dimen/padding_19"
+            android:backgroundTint="@color/colorAccent"
+            android:fontFamily="sans-serif"
+            android:gravity="center"
+            android:insetTop="0dp"
+            android:insetBottom="0dp"
+            android:text="@string/save_button_text"
+            android:textSize="@dimen/text_size_14"
+            app:cornerRadius="20dp" />
+
+        <androidx.core.widget.ContentLoadingProgressBar
+            android:id="@+id/loading_view"
+            style="?android:attr/progressBarStyleLarge"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:layout_gravity="center"
+            android:indeterminate="true"
+            android:visibility="@{viewModel.isLoading ? View.VISIBLE : View.INVISIBLE}"
+            tools:background="@color/transparent"
+            tools:visibility="visible" />
+
+    </RelativeLayout>
+</layout>

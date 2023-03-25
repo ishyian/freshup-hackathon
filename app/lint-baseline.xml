@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<issues format="6" by="lint 7.1.2" type="baseline" client="gradle" dependencies="false" name="AGP (7.1.2)" variant="fatal" version="7.1.2">
+
+    <issue
+        id="NullSafeMutableLiveData"
+        message="Cannot set non-nullable LiveData value to `null`"
+        errorLine1="                setUpTicketGroup.postValue(null)"
+        errorLine2="                                           ~~~~">
+        <location
+            file="src/main/java/com/evenzgroup/evenz/activities/DetailsEventViewModel.kt"
+            line="81"
+            column="44"/>
+    </issue>
+
+    <issue
+        id="NullSafeMutableLiveData"
+        message="Expected non-nullable value"
+        errorLine1="            setUpEvents.postValue(it)"
+        errorLine2="                                  ~~">
+        <location
+            file="src/main/java/com/evenzgroup/evenz/activities/LandingPagePreformerViewModel.kt"
+            line="83"
+            column="35"/>
+    </issue>
+
+    <issue
+        id="NullSafeMutableLiveData"
+        message="Cannot set non-nullable LiveData value to `null`"
+        errorLine1="                setUpEvents.postValue(null)"
+        errorLine2="                                      ~~~~">
+        <location
+            file="src/main/java/com/evenzgroup/evenz/activities/LandingPagePreformerViewModel.kt"
+            line="95"
+            column="39"/>
+    </issue>
+
+    <issue
+        id="NullSafeMutableLiveData"
+        message="Expected non-nullable value"
+        errorLine1="            setUpEvents.postValue(it)"
+        errorLine2="                                  ~~">
+        <location
+            file="src/main/java/com/evenzgroup/evenz/activities/LandingPageVenueViewModel.kt"
+            line="77"
+            column="35"/>
+    </issue>
+
+    <issue
+        id="NullSafeMutableLiveData"
+        message="Cannot set non-nullable LiveData value to `null`"
+        errorLine1="                setUpEvents.postValue(null)"
+        errorLine2="                                      ~~~~">
+        <location
+            file="src/main/java/com/evenzgroup/evenz/activities/LandingPageVenueViewModel.kt"
+            line="89"
+            column="39"/>
+    </issue>
+
+    <issue
+        id="NullSafeMutableLiveData"
+        message="Expected non-nullable value"
+        errorLine1="                    setOccurrences.postValue(listOfDates)"
+        errorLine2="                                             ~~~~~~~~~~~">
+        <location
+            file="src/main/java/com/evenzgroup/evenz/fragments/bottom/OccurrencesViewModel.kt"
+            line="68"
+            column="46"/>
+    </issue>
+
+    <issue
+        id="NullSafeMutableLiveData"
+        message="Expected non-nullable value"
+        errorLine1="            setOccurrences.postValue(listOfDates)"
+        errorLine2="                                     ~~~~~~~~~~~">
+        <location
+            file="src/main/java/com/evenzgroup/evenz/fragments/bottom/OccurrencesViewModel.kt"
+            line="78"
+            column="38"/>
+    </issue>
+
+    <issue
+        id="NullSafeMutableLiveData"
+        message="Expected non-nullable value"
+        errorLine1="                        animateToSelectedPosition.postValue(selectedPosition)"
+        errorLine2="                                                            ~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/java/com/evenzgroup/evenz/fragments/bottom/OccurrencesViewModel.kt"
+            line="137"
+            column="61"/>
+    </issue>
+
+    <issue
+        id="NullSafeMutableLiveData"
+        message="Expected non-nullable value"
+        errorLine1="                        animateToSelectedPosition.postValue(selectedPosition)"
+        errorLine2="                                                            ~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/java/com/evenzgroup/evenz/fragments/bottom/OccurrencesViewModel.kt"
+            line="140"
+            column="61"/>
+    </issue>
+
+    <issue
+        id="NullSafeMutableLiveData"
+        message="Expected non-nullable value"
+        errorLine1="        highlightTicket.value = ticket"
+        errorLine2="                                ~~~~~~">
+        <location
+            file="src/main/java/com/evenzgroup/evenz/activities/SeatingChartViewModel.kt"
+            line="48"
+            column="33"/>
+    </issue>
+
+    <issue
+        id="NullSafeMutableLiveData"
+        message="Cannot set non-nullable LiveData value to `null`"
+        errorLine1="                showData.postValue(null)"
+        errorLine2="                                   ~~~~">
+        <location
+            file="src/main/java/com/evenzgroup/evenz/activities/TrackingEntetiesViewModel.kt"
+            line="136"
+            column="36"/>
+    </issue>
+
+</issues>

@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <import type="android.view.View" />
+        <variable
+            name="viewModel"
+            type="com.melitopolcherry.hackathon.features.bottom.PromosViewModel" />
+    </data>
+
+    <RelativeLayout
+        android:id="@+id/bottom_sheet_promocodes"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:minHeight="@dimen/lp_image_height"
+        app:behavior_hideable="true"
+        app:behavior_peekHeight="0dp"
+        app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior"
+        android:background="@drawable/bottom_sheet_rounded">
+
+        <include
+            android:id="@+id/bottom_sheet_slide_button"
+            layout="@layout/view_notch" />
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/add_promo_button"
+            android:backgroundTint="@color/background_primary"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/bottom_sheet_slide_button"
+            android:layout_marginStart="@dimen/padding_16"
+            android:layout_marginTop="@dimen/padding_16"
+            android:layout_marginEnd="@dimen/padding_16"
+            android:layout_marginBottom="@dimen/padding_8"
+            app:cardCornerRadius="10dp"
+            app:cardElevation="@dimen/padding_4">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginStart="@dimen/padding_8"
+                android:layout_marginTop="@dimen/padding_8"
+                android:layout_marginEnd="@dimen/padding_8"
+                android:layout_marginBottom="@dimen/padding_8">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/icon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_gravity="center"
+                    android:layout_marginEnd="@dimen/padding_8"
+                    android:fontFamily="sans-serif"
+                    android:src="@drawable/ic_add"
+                    android:tint="@color/text_accent" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_gravity="center"
+                    android:layout_toEndOf="@+id/icon"
+                    android:fontFamily="sans-serif"
+                    android:text="@string/add_new_promo_code"
+                    android:textColor="@color/text_accent"
+                    android:textSize="@dimen/text_size_16" />
+
+            </RelativeLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/promos_recycler_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/add_promo_button"
+            android:visibility="gone"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            tools:listitem="@layout/item_promocode" />
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:id="@+id/empty_state_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/add_promo_button"
+            android:layout_centerInParent="true"
+            android:layout_marginTop="@dimen/padding_16"
+            android:layout_marginBottom="@dimen/padding_16"
+            android:orientation="vertical"
+            android:visibility="gone"
+            tools:visibility="visible">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/empty_state_image"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:src="@drawable/illustration_promo_code"
+                tools:ignore="ContentDescription" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/empty_state_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="@dimen/padding_19"
+                android:fontFamily="sans-serif"
+                android:gravity="center"
+                android:textColor="@color/text_primary"
+                android:text="@string/no_promocodes"
+                android:textAlignment="center"
+                android:textSize="@dimen/text_size_18"
+                tools:textColor="@color/black" />
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:id="@+id/no_logged_state"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_marginTop="@dimen/padding_16"
+            android:layout_marginBottom="@dimen/padding_16"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/image"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="@dimen/padding_25"
+                android:layout_marginBottom="@dimen/padding_25"
+                android:src="@drawable/illustration_promo_code"
+                tools:ignore="ContentDescription" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/navigation_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="@dimen/padding_25"
+                android:fontFamily="sans-serif"
+                android:gravity="center"
+                android:text="@string/have_a_promo_code"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_size_18" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="@dimen/padding_10"
+                android:layout_marginBottom="@dimen/padding_25"
+                android:fontFamily="sans-serif-light"
+                android:gravity="center"
+                android:text="@string/please_login_to_redeem_your_n_promo_code"
+                android:textSize="@dimen/text_size_16" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/login_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/button_normal_height"
+                android:layout_gravity="center"
+                android:layout_marginTop="@dimen/padding_25"
+                android:layout_marginBottom="@dimen/padding_16"
+                android:backgroundTint="@color/colorAccent"
+                android:fontFamily="sans-serif"
+                android:insetTop="0dp"
+                android:insetBottom="0dp"
+                android:letterSpacing="0"
+                android:text="@string/login_or_signup"
+                android:textAllCaps="false"
+                android:textSize="@dimen/text_size_16"
+                app:cornerRadius="20dp" />
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+        <androidx.core.widget.ContentLoadingProgressBar
+            android:id="@+id/loading_view"
+            style="?android:attr/progressBarStyleLarge"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:layout_gravity="center"
+            android:indeterminate="true"
+            android:visibility="@{viewModel.isLoading ? View.VISIBLE : View.INVISIBLE}"
+            tools:background="@color/transparent"
+            tools:visibility="visible" />
+
+    </RelativeLayout>
+</layout>

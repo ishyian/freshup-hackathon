@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:visibility="gone"
+    tools:ignore="UseCompoundDrawables"
+    tools:visibility="visible">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/no_notifications_image"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:src="@drawable/ilustrations_no_notifications"
+        tools:ignore="ContentDescription" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/no_notifications_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="@dimen/padding_19"
+        android:fontFamily="sans-serif"
+        android:gravity="center"
+        android:text="@string/no_notifications_title"
+        android:textAlignment="center"
+        android:textColor="@color/text_primary"
+        android:textSize="@dimen/text_size_18" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/no_notifications_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="@dimen/padding_8"
+        android:fontFamily="sans-serif-light"
+        android:gravity="center"
+        android:text="@string/no_notifications_text"
+        android:textAlignment="center"
+        android:textColor="@color/text_secondary"
+        android:textSize="@dimen/text_size_16" />
+
+</androidx.appcompat.widget.LinearLayoutCompat>

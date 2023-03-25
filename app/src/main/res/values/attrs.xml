@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="RangeSeekBar">
+        <attr name="thumb" format="integer" />
+        <attr name="textSize" format="dimension" />
+        <attr name="textColor" format="color" />
+        <attr name="activeColor" format="color" />
+        <attr name="inactiveColor" format="color" />
+    </declare-styleable>
+
+</resources>

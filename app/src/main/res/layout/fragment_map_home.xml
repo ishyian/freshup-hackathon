@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="viewModel"
+            type="com.melitopolcherry.hackathon.features.maps.home.presentation.MapHomeViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/map_home_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fitsSystemWindows="false">
+
+        <androidx.fragment.app.FragmentContainerView
+            android:id="@+id/content_main_map"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+        <androidx.fragment.app.FragmentContainerView
+            android:id="@+id/filters_fragment"
+            android:name="com.melitopolcherry.hackathon.features.filters.FiltersFragment"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/search_here_button"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/padding_34"
+            android:layout_marginTop="@dimen/padding_16"
+            android:backgroundTint="@color/background_primary"
+            android:fontFamily="@font/sfprodisplaymedium"
+            android:insetTop="0dp"
+            android:insetBottom="0dp"
+            android:text="@string/search_this_area"
+            android:textAllCaps="false"
+            android:textColor="@color/text_accent"
+            android:textSize="@dimen/text_size_14"
+            android:visibility="gone"
+            app:cornerRadius="20dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/filters_fragment"
+            tools:visibility="visible" />
+
+        <androidx.appcompat.widget.AppCompatImageButton
+            android:id="@+id/my_location_button"
+            android:layout_width="@dimen/back_button_height"
+            android:layout_height="@dimen/back_button_height"
+            android:layout_alignBottom="@id/content_main_map"
+            android:layout_marginStart="@dimen/padding_16"
+            android:layout_marginBottom="@dimen/padding_22"
+            android:background="@drawable/location_button_background"
+            android:elevation="@dimen/padding_8"
+            android:focusable="false"
+            android:foreground="@drawable/ripple_effect"
+            android:src="@drawable/ic_direction"
+            android:tint="@color/text_primary"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:background="@drawable/location_button_background"
+            tools:ignore="ContentDescription" />
+
+        <androidx.appcompat.widget.AppCompatImageButton
+            android:id="@+id/list_button"
+            android:layout_width="@dimen/back_button_height"
+            android:layout_height="@dimen/back_button_height"
+            android:layout_marginEnd="@dimen/padding_16"
+            android:layout_marginBottom="@dimen/padding_22"
+            android:background="@drawable/location_button_background"
+            android:elevation="@dimen/padding_8"
+            android:focusable="false"
+            android:foreground="@drawable/ripple_effect"
+            android:gravity="center"
+            android:src="@drawable/map_list_button_selector"
+            android:tint="@color/text_primary"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            tools:ignore="ContentDescription" />
+
+        <androidx.fragment.app.FragmentContainerView
+            android:id="@+id/small_categories_fragment"
+            android:name="com.melitopolcherry.hackathon.features.filters.SmallCategoriesFragment"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginTop="@dimen/padding_8"
+            android:layout_marginBottom="@dimen/offset22"
+            android:gravity="center_vertical"
+            app:layout_constraintBottom_toBottomOf="parent" />
+
+        <androidx.core.widget.ContentLoadingProgressBar
+            android:id="@+id/loading_view"
+            style="?android:attr/progressBarStyleLarge"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:indeterminate="true"
+            android:visibility="@{viewModel.isLoading ? View.VISIBLE : View.INVISIBLE}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:background="@color/transparent"
+            tools:visibility="visible" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

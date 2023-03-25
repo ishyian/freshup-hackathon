@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/item_layout"
+    android:backgroundTint="@color/background_primary"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="@dimen/padding_16"
+    android:layout_marginTop="@dimen/padding_12"
+    android:layout_marginEnd="@dimen/padding_16"
+    android:layout_marginBottom="@dimen/padding_12"
+    app:cardCornerRadius="10dp"
+    app:cardElevation="@dimen/padding_4">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/promocode_image"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="@dimen/padding_8"
+            android:adjustViewBounds="true"
+            android:scaleType="fitXY"
+            tools:src="@drawable/promo_red" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/promocode_code"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/padding_4"
+            android:layout_marginEnd="@dimen/padding_10"
+            android:layout_toStartOf="@+id/promocode_date"
+            android:layout_toEndOf="@+id/promocode_image"
+            android:fontFamily="sans-serif-medium"
+            android:textColor="@color/text_primary"
+            android:textSize="@dimen/text_size_16"
+            tools:text="EGER2" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/promocode_discount"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/promocode_code"
+            android:layout_marginTop="@dimen/padding_2"
+            android:layout_marginEnd="@dimen/padding_10"
+            android:layout_toEndOf="@+id/promocode_image"
+            android:fontFamily="sans-serif"
+            android:textColor="@color/colorAccent"
+            android:textSize="@dimen/text_size_14"
+            tools:text="30% Discount" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/promocode_description"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/promocode_discount"
+            android:layout_marginEnd="@dimen/padding_10"
+            android:layout_marginBottom="@dimen/padding_6"
+            android:layout_toEndOf="@+id/promocode_image"
+            android:fontFamily="sans-serif"
+            android:textSize="@dimen/text_size_12"
+            tools:text="for any event"
+            android:textColor="@color/text_primary" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/promocode_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/promocode_discount"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="@dimen/padding_10"
+            android:layout_marginTop="@dimen/padding_6"
+            android:layout_marginEnd="@dimen/padding_10"
+            android:fontFamily="sans-serif"
+            android:textSize="@dimen/text_size_12"
+            tools:text="expired in 4 days"
+            android:textColor="@color/text_primary" />
+
+    </RelativeLayout>
+
+</com.google.android.material.card.MaterialCardView>

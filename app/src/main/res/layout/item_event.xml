@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginHorizontal="@dimen/offset16"
+    android:layout_marginBottom="@dimen/offset12"
+    android:elevation="10dp"
+    app:cardCornerRadius="0dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/offset8">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/text_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/sansation_regular"
+            android:textAllCaps="true"
+            android:textColor="@color/primary_text_color"
+            android:textSize="@dimen/text10"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="ПН  06.03.2023" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/text_address"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/offset8"
+            android:fontFamily="@font/sansation_regular"
+            android:textColor="@color/color_2"
+            android:textSize="@dimen/text10"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/text_date"
+            tools:text="Мелітопольска, 13 Б (Корпус 3)" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/text_name"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/offset8"
+            android:fontFamily="@font/sansation_regular"
+            android:textColor="@color/color_4"
+            android:textSize="@dimen/text16"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/text_address"
+            tools:text="НАЗВА" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/text_teacher_name"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/offset16"
+            android:fontFamily="@font/sansation_regular"
+            android:textColor="@color/color_1"
+            android:textSize="@dimen/text10"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/text_name"
+            tools:text="НАЗВА" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.cardview.widget.CardView>

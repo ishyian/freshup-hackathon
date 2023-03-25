@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/tickets_activity_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/background_primary"
+        android:fitsSystemWindows="true"
+        android:orientation="vertical"
+        tools:context=".features.seatingchart.SeatingChartActivity">
+
+        <include
+            android:id="@+id/back_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/padding_16"
+            app:layout_constraintBottom_toBottomOf="@+id/venue_name"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/ticket_name_and_date"
+            layout="@layout/back_button" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/ticket_name_and_date"
+            style="@style/DetailsTitle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/padding_8"
+            android:layout_marginTop="@dimen/padding_6"
+            android:layout_marginEnd="@dimen/button_normal_height"
+            android:layout_toEndOf="@+id/back_button"
+            android:ellipsize="end"
+            android:gravity="center"
+            android:maxLines="1"
+            android:paddingEnd="@dimen/padding_16"
+            android:paddingStart="0dp"
+            android:transitionName="event_title"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/back_button"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="NAME" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/venue_name"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/ticket_name_and_date"
+            android:layout_marginStart="@dimen/padding_8"
+            android:layout_marginTop="@dimen/padding_4"
+            android:paddingEnd="@dimen/padding_16"
+            android:paddingStart="0dp"
+            android:layout_marginEnd="@dimen/button_normal_height"
+            android:layout_toEndOf="@+id/back_button"
+            android:ellipsize="end"
+            android:fontFamily="sans-serif"
+            android:gravity="center"
+            android:maxLines="1"
+            android:textColor="@color/text_secondary"
+            android:textSize="@dimen/text_size_14"
+            android:transitionName="event_date"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/back_button"
+            app:layout_constraintTop_toBottomOf="@+id/ticket_name_and_date"
+            tools:text="date"
+            tools:visibility="visible" />
+
+        <FrameLayout
+            android:id="@+id/stadium_layout"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_above="@+id/separator_view"
+            android:layout_below="@+id/venue_name"
+            android:layout_marginTop="@dimen/padding_8"
+            app:layout_constraintHeight_percent="0.4"
+            app:layout_constraintTop_toBottomOf="@+id/venue_name">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/stadium_placeholder"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="fitXY"
+                android:src="@drawable/placeholder_event"
+                android:visibility="invisible"
+                tools:visibility="visible" />
+
+            <FrameLayout
+                android:id="@+id/stadium_web_layout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:visibility="gone"
+                tools:visibility="gone">
+
+                <WebView
+                    android:id="@+id/stadium_web_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+
+            </FrameLayout>
+
+            <androidx.core.widget.ContentLoadingProgressBar
+                android:id="@+id/loading_view"
+                style="?android:attr/progressBarStyleLarge"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:indeterminate="true"
+                tools:background="@color/transparent"
+                tools:visibility="visible" />
+        </FrameLayout>
+
+        <View
+            android:id="@+id/separator_view"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_alignParentBottom="true"
+            android:background="@color/separator"
+            app:layout_constraintTop_toBottomOf="@+id/stadium_layout"
+            tools:background="@color/separator" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tickets_count"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/padding_16"
+            android:layout_marginTop="@dimen/padding_10"
+            android:layout_marginEnd="@dimen/padding_8"
+            android:layout_marginBottom="@dimen/padding_10"
+            android:layout_toStartOf="@+id/seat_view_button"
+            android:ellipsize="end"
+            android:fontFamily="sans-serif"
+            android:maxLines="1"
+            android:textColor="@color/text_primary"
+            android:textSize="@dimen/text_size_16"
+            app:layout_constraintEnd_toStartOf="@+id/seat_view_button"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toBottomOf="@+id/filters_button"
+            app:layout_constraintTop_toTopOf="@+id/filters_button"
+            tools:text="Tickets" />
+
+        <ImageButton
+            android:id="@+id/seat_view_button"
+            android:layout_width="@dimen/button_normal_height"
+            android:layout_height="@dimen/button_normal_height"
+            android:layout_marginEnd="@dimen/padding_12"
+            android:layout_toStartOf="@+id/reset_button"
+            android:background="@drawable/ripple_effect"
+            android:src="@drawable/ic_seat_icon"
+            android:visibility="gone"
+            app:layout_constraintEnd_toStartOf="@+id/reset_button"
+            app:layout_constraintTop_toBottomOf="@+id/separator_view"
+            app:tint="@color/text_primary"
+            tools:ignore="ContentDescription"
+            tools:visibility="visible" />
+
+        <ImageButton
+            android:id="@+id/reset_button"
+            android:layout_width="@dimen/button_normal_height"
+            android:layout_height="@dimen/button_normal_height"
+            android:layout_gravity="end|center_vertical"
+            android:layout_marginEnd="@dimen/padding_12"
+            android:layout_toStartOf="@+id/filters_button"
+            android:background="@drawable/ripple_effect"
+            android:fontFamily="sans-serif-light"
+            android:src="@drawable/ic_reset"
+            android:visibility="gone"
+            app:layout_constraintEnd_toStartOf="@+id/filters_button"
+            app:layout_constraintTop_toBottomOf="@+id/separator_view"
+            app:tint="@color/text_primary"
+            tools:ignore="ContentDescription"
+            tools:visibility="visible" />
+
+        <ImageButton
+            android:id="@+id/filters_button"
+            android:layout_width="@dimen/button_normal_height"
+            android:layout_height="@dimen/button_normal_height"
+            android:layout_alignParentEnd="true"
+            android:layout_gravity="end|center_vertical"
+            android:layout_marginEnd="@dimen/padding_10"
+            android:background="@drawable/ripple_effect"
+            android:fontFamily="sans-serif-light"
+            android:src="@drawable/ic_filter"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/separator_view"
+            app:tint="@color/text_primary"
+            tools:ignore="ContentDescription" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/tickets_recycler"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_below="@+id/tickets_count"
+            android:choiceMode="singleChoice"
+            android:clipToPadding="false"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintTop_toBottomOf="@+id/filters_button"
+            app:layout_constraintBottom_toBottomOf="parent"
+            tools:listitem="@layout/item_ticket_group" />
+
+        <FrameLayout
+            android:id="@+id/empty_state"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/tickets_recycler"
+            tools:visibility="visible">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:text="@string/no_tickets_by_your_request"
+                android:textColor="@color/text_secondary"
+                android:textSize="@dimen/text_size_16" />
+        </FrameLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/item_event_layout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginHorizontal="@dimen/offset16"
+    android:layout_marginBottom="@dimen/offset24"
+    android:background="?android:attr/selectableItemBackground"
+    android:orientation="vertical">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/image_constraint"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/event_list_image"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_gravity="center"
+            android:layout_marginBottom="@dimen/padding_16"
+            android:adjustViewBounds="true"
+            android:focusableInTouchMode="true"
+            android:scaleType="centerCrop"
+            app:layout_constraintDimensionRatio="H,16:9"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:shapeAppearanceOverlay="@style/RoundedImageView"
+            tools:ignore="ContentDescription"
+            tools:src="@drawable/placeholder_event" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/event_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/image_constraint"
+        android:layout_gravity="start"
+        android:layout_marginTop="@dimen/offset8"
+        android:ellipsize="end"
+        android:fontFamily="@font/sfprodisplaymedium"
+        android:maxLines="3"
+        android:textColor="@color/text_accent"
+        android:textSize="@dimen/text14"
+        tools:text="Example title" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/date_text_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/event_title"
+        android:layout_gravity="center_horizontal|start"
+        android:layout_marginTop="@dimen/offset4"
+        android:fontFamily="@font/sfprodisplayregular"
+        android:textColor="@color/text_primary"
+        android:textSize="@dimen/text12"
+        tools:text="Example date" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/event_item_address_text_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/date_text_view"
+        android:layout_gravity="center_horizontal|start"
+        android:layout_marginTop="@dimen/offset4"
+        android:fontFamily="@font/sfprodisplayregular"
+        android:lines="1"
+        android:textColor="@color/gray500"
+        android:textSize="@dimen/text12"
+        tools:text="Example address" />
+
+</RelativeLayout>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:state_checked="true" android:state_enabled="true">
+        <shape>
+            <solid android:color="@color/colorPrimary" />
+            <corners android:radius="23dp" />
+        </shape>
+    </item>
+
+    <item android:state_checked="false" android:state_enabled="true">
+        <ripple android:color="@color/ripple_active">
+            <item android:id="@android:id/mask">
+                <shape>
+                    <solid android:color="@color/white" />
+                    <corners android:radius="23dp" />
+                </shape>
+            </item>
+
+            <item>
+                <shape>
+                    <solid android:color="@android:color/transparent" />
+                    <corners android:radius="23dp" />
+                </shape>
+            </item>
+        </ripple>
+    </item>
+
+    <item android:state_checked="false" android:state_enabled="false">
+        <shape />
+    </item>
+</selector>

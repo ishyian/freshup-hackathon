@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/checkout_count_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:orientation="vertical"
+        tools:context=".features.bottom.TicketQuantityBottomFragment">
+
+        <include
+            android:id="@+id/bottom_sheet_slide_button"
+            layout="@layout/view_notch" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/checkout_bottom_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/padding_16"
+            android:fontFamily="sans-serif"
+            android:text="@string/amount_of_tickets"
+            android:textSize="@dimen/text_size_14" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/checkout_count_recycler"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/padding_16"
+            android:clipToPadding="false"
+            android:orientation="horizontal"
+            android:paddingTop="@dimen/padding_10"
+            android:paddingBottom="@dimen/padding_10"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            tools:listitem="@layout/item_quantity_ticket" />
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+</layout>

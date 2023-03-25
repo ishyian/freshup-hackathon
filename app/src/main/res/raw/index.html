@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title style="background-color: #c600ff">Demo Page</title>
+        <meta charset="UTF-8">
+        <link
+                rel="stylesheet"
+                href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+        <link
+                rel="stylesheet"
+                href="https://mapwidget3.seatics.com/styles">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+        <script src="https://mapwidget3.seatics.com/api/framework"></script>
+        <style>
+        #map-ctn {
+            position: relative;
+            z-index: 0;
+        }
+
+        .venue-map {
+            top: 0%;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        </style>
+    </head>
+    <body>
+        <div class="container-fluid">
+            <div
+                    class="map-ctn map-ctn-tg-on-left"
+                    id="map-ctn">
+                <div
+                        class="venue-map"
+                        id="venue-map"
+                        style="overflow: visible;width: 650px; height: 650px;"></div>
+            </div>
+            <script type="text/javascript">
+        let ticketGroups;
+
+        function updateWH(width, height, color) {
+            console.log("SEATING CHART: mapLoaded" + color)
+            document.getElementById('venue-map').style.height = height + "px";
+            document.getElementById('venue-map').style.width = width + "px";
+            document.getElementById('venue-map').style.backgroundColor = color;
+            document.body.style.backgroundColor = color;
+        }
+        function resetTickets() {
+            for (const [k, v] of Object.entries(ticketGroups)) {
+                if (v.section.selected === true)
+                    Seatics.MapComponent.toggleSectionSelection(v.section)
+            }
+        }
+        function reset() {
+            Seatics.MapComponent.resetMap();
+        }
+        function loadMap(eventName, venueName, eventDate, tickets, width, height, color) {
+            updateWH(width, height, color);
+            $.ajax({
+                url: "https://www.tn-apis.com/maps/v3/EventAndVenueInfo",
+                jsonp: "callback",
+                dataType: "jsonp",
+                data: {
+                    websiteConfigId: 26733, //websiteConfigId: 690,//
+                    eventName: eventName,
+                    venue: venueName,
+                    dateTime: eventDate,
+                    consumerKey: "QgtuDr9cN1Vrt3VBRUv4_QMjrfAa" // consumerKey: "QgtuDr9cN1Vrt3VBRUv4_QMjrfAa"
+                },
+                success: function (rtnVals) {
+                    //returns two datasets: event info and ticket info
+                    const eventData = rtnVals[0];
+                    const mapData = rtnVals[1];
+                    if (eventData && mapData) {
+                    console.log("SEATING CHART: eventData && mapData is != null")
+                    } else {
+                        MapFailed.mapFailed();
+                        console.log("SEATING CHART: mapFailed")
+                    }
+                    $("#venue-map").empty();
+                    Seatics.config.showResetControl = false;
+                    Seatics.config.enableLegend = false;
+                    Seatics.config.eventInfoLeftCol = null;
+                    Seatics.config.eventInfoRightCol = null;
+                    Seatics.config.enableLegalDisclosureMobile = false;
+                    Seatics.config.enableHeaderLegalDisclosureMobile = false;
+                    Seatics.config.enableHeaderLowerLegalDisclosureMobile = false;
+                    Seatics.config.smallScreenMapLayout = Seatics.SmallScreenMapOptions.FullyShown;
+                    Seatics.config.smallScreenMapLayout = Seatics.SmallScreenMapOptions.HiddenWithPreview;
+                    Seatics.MapComponent.create({
+                        imgSrc: eventData.mapImage,
+                        tickets: [],
+                        mapData: mapData,
+                        vfsUrl: 'https://vfs.seatics.com',
+                        container: $("#venue-map"),
+                        presentationInterface: {
+                            updateTicketsList: function (param) {
+                                Android.selectTickets(param.flatMap(item => item.tickets).map(item => "{\"tgUserSec\":" + "\"" + item.tgUserSec+ "\"" + "," +
+                                    "\"tgUserRow\":"+ "\"" + item.tgUserRow + "\"" + "," +
+                                    "\"tgID\":" + "\"" + item.tgID + "\"" + "," +
+                                    "\"vfsUrlLarge\":" + "\"" + (item.section && item.section.vfsUrlLarge) + "\"" + "," +
+                                    "\"tgColor\":" + "\"" + item.tgColor + "\"" +
+                                    "}"
+                                ));
+                                ticketGroups = {};
+                                param[0].tickets.forEach(ticket => {
+                                    ticketGroups[ticket.tgID] = ticket;
+                                });
+                            }
+                        },
+                        mapWidth: width,
+                        mapHeight: height,
+                        mapName: eventData.mapName,
+                        enableSectionInfoPopups: true
+                    });
+                    Seatics.MapComponent.addTicketData(tickets);
+                    if (eventData && mapData) {
+                        MapLoaded.mapLoaded();
+                        console.log("SEATING CHART: mapLoaded")
+                    } else {
+                        MapFailed.mapFailed();
+                        console.log("SEATING CHART: mapFailed")
+                    }
+                }
+            });
+        }
+            </script>
+        </div>
+    </body>
+</html>

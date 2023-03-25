@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="@dimen/padding_6"
+    android:orientation="vertical">
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/place_area"
+        android:textColor="@color/text_primary"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/padding_16"
+        android:layout_marginEnd="@dimen/padding_16"
+        android:fontFamily="sans-serif"
+        android:textSize="@dimen/text_size_16"
+        tools:text="test place"
+        tools:textColor="@color/black" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/place_address"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/padding_16"
+        android:layout_marginEnd="@dimen/padding_16"
+        android:layout_marginBottom="@dimen/padding_6"
+        android:fontFamily="sans-serif"
+        android:textSize="@dimen/text_size_14"
+        tools:text="test place"
+        android:textColor="@color/text_secondary"
+        tools:textColor="@color/text_secondary" />
+
+    <View
+        android:id="@+id/line_separator"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/separator"
+        tools:background="@color/separator" />
+
+</androidx.appcompat.widget.LinearLayoutCompat>

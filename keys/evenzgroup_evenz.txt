@@ -1,0 +1,6 @@
+com.evenzgroup.evenz
+
+key store password: evenzgroup
+
+alias: evenzgroup
+password: puorgzneve

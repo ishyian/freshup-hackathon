@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <LinearLayout
+        android:id="@+id/processing_order_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/background_primary"
+        android:orientation="vertical"
+        android:weightSum="1"
+        tools:context=".features.payment.ProcessingOrderFragment">
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:layout_weight="0.5"
+            android:gravity="bottom"
+            android:orientation="vertical">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/alert_icon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:src="@drawable/ic_check"
+                android:tint="@color/text_primary" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/wrong_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/padding_16"
+                android:layout_marginTop="30dp"
+                android:layout_marginEnd="@dimen/padding_16"
+                android:layout_marginBottom="@dimen/padding_50"
+                android:fontFamily="sans-serif"
+                android:gravity="center"
+                android:text="@string/your_order_is_processing_n_we_ll_notify_you_soon"
+                android:textColor="@color/text_primary"
+                android:textSize="@dimen/text_size_28" />
+
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.5">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/go_to_orders_button"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/button_normal_height"
+                android:layout_gravity="center"
+                android:layout_marginStart="@dimen/padding_50"
+                android:layout_marginEnd="@dimen/padding_50"
+                android:backgroundTint="@color/colorAccent"
+                android:fontFamily="sans-serif"
+                android:insetTop="0dp"
+                android:insetBottom="0dp"
+                android:text="@string/order_history"
+                android:textColor="@color/white"
+                app:cornerRadius="20dp" />
+
+        </FrameLayout>
+
+    </LinearLayout>
+</layout>

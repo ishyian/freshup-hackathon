@@ -1,0 +1,79 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/search_item_background"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="?android:attr/selectableItemBackground"
+    android:paddingStart="@dimen/padding_16"
+    android:paddingTop="@dimen/padding_8"
+    android:paddingEnd="@dimen/padding_16"
+    android:paddingBottom="@dimen/padding_8"
+    android:weightSum="1">
+
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/tracking_image_circle"
+        android:layout_width="@dimen/card_image_size"
+        android:layout_height="@dimen/card_image_size"
+        android:layout_centerVertical="true"
+        android:layout_gravity="center_vertical"
+        android:layout_marginEnd="@dimen/padding_16"
+        android:scaleType="centerCrop"
+        app:shapeAppearanceOverlay="@style/circleImageView"
+        tools:src="@drawable/placeholder_performer" />
+
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/tracking_image_rounded"
+        android:layout_width="@dimen/card_image_size"
+        android:layout_height="@dimen/card_image_size"
+        android:layout_centerVertical="true"
+        android:layout_gravity="center_vertical"
+        android:layout_marginEnd="@dimen/padding_16"
+        android:scaleType="centerCrop"
+        app:shapeAppearanceOverlay="@style/RoundedImageView"
+        tools:src="@drawable/placeholder_event" />
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginEnd="@dimen/padding_19"
+        android:layout_toEndOf="@+id/tracking_image_rounded"
+        android:gravity="center_vertical"
+        android:orientation="vertical">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tracking_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif"
+            android:textColor="@color/text_primary"
+            android:textSize="@dimen/text_size_14"
+            tools:text="TEXT" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tracking_date"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/padding_4"
+            android:fontFamily="sans-serif-light"
+            android:textColor="@color/text_secondary"
+            android:textSize="@dimen/text_size_12"
+            tools:text="TEXT"
+            android:visibility="gone"
+            tools:textColor="@color/gray_color" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tracking_description"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/padding_4"
+            android:fontFamily="sans-serif-light"
+            android:textColor="@color/text_secondary"
+            android:textSize="@dimen/text_size_12"
+            tools:text="TEXT"
+            tools:textColor="@color/gray_color" />
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+</RelativeLayout>

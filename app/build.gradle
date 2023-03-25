@@ -1,0 +1,101 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-kapt'
+apply plugin: 'kotlin-parcelize'
+apply plugin: 'com.google.firebase.firebase-perf'
+apply plugin: 'realm-android'
+apply plugin: 'com.google.gms.google-services'
+apply plugin: 'com.google.firebase.crashlytics'
+apply plugin: 'dagger.hilt.android.plugin'
+
+android {
+
+    def globalConfiguration = rootProject.extensions.getByName("ext")
+    compileSdkVersion globalConfiguration["androidCompileSdkVersion"]
+    buildToolsVersion = globalConfiguration["androidBuildToolsVersion"]
+
+    defaultConfig {
+        applicationId "com.melitopolcherry.hackathon"
+        minSdkVersion globalConfiguration["androidMinSdkVersion"]
+        targetSdkVersion globalConfiguration["androidTargetSdkVersion"]
+        versionCode 1
+        versionName "1.0.0"
+        multiDexEnabled true
+        project.ext.set("archivesBaseName", defaultConfig.applicationId + "_" + defaultConfig.versionName + "_" + defaultConfig.versionName + "(" + defaultConfig.versionCode + ")")
+    }
+
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+    buildTypes {
+        debug {
+            minifyEnabled false
+            resValue "string", "app_name", "ЯкВдома"
+        }
+        release {
+            minifyEnabled false
+            resValue "string", "app_name", "ЯкВдома"
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    packagingOptions {
+        resources.excludes.add("META-INF/*")
+    }
+    lint {
+        baseline = file("lint-baseline.xml")
+    }
+
+    flavorDimensions "environment"
+    productFlavors {
+        dev {
+            dimension "environment"
+            buildConfigField 'String', 'STRIPE_KEY', "\"pk_test_Bvqs8IUfpvIjhyilB52871iq00gvnvKtUi\""
+        }
+
+        production {
+            dimension "environment"
+            buildConfigField 'String', 'STRIPE_KEY', "\"pk_test_Bvqs8IUfpvIjhyilB52871iq00gvnvKtUi\""
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    buildFeatures {
+        viewBinding true
+        dataBinding = true
+    }
+    testOptions {
+        unitTests.returnDefaultValues = true
+    }
+}
+
+dependencies {
+    def ext = rootProject.ext
+    def notations = ext.appDependencies
+
+    implementation project(":data")
+    implementation project(":domain")
+    implementation fileTree(include: ['*.aar'], dir: 'libs')
+
+    for (item in notations.forImplementation) {
+        implementation item
+    }
+
+    for (item in notations.forKapt) {
+        kapt item
+    }
+
+    for (item in notations.forPlatform) {
+        implementation platform(item)
+    }
+
+    for (item in notations.forDebug) {
+        debugImplementation item
+    }
+
+    for (item in notations.forRelease) {
+        releaseImplementation item
+    }
+}
