@@ -78,13 +78,17 @@ class SmallCategoriesAdapter(
             }
             val backgroundShape =
                 ContextCompat.getDrawable(itemView.context, R.drawable.filters_button_background) as GradientDrawable
-
+            var tint = 0
             if (selectedCategories.contains(item)) {
                 backgroundShape.setStroke(2.px, Color.parseColor(item.color))
-                backgroundShape.setColor(Color.parseColor("#FDF8EE"))
+                backgroundShape.setColor(Color.parseColor(item.color))
+                binding.smallCategoryTitleTextView.setTextColor(Color.WHITE)
+                tint = Color.WHITE
             } else {
                 backgroundShape.setStroke(0, Color.parseColor(item.color))
                 backgroundShape.setColor(Color.parseColor("#FFFFFF"))
+                binding.smallCategoryTitleTextView.setTextColor(Color.parseColor(item.color))
+                tint = Color.parseColor(item.color)
             }
 
             binding.smallCategoryTitleTextView.text = item.shortName
@@ -99,6 +103,7 @@ class SmallCategoriesAdapter(
                         binding.root.context?.packageName
                     )
                 )
+                drawable?.setTint(tint)
                 binding.smallCategoryTitleTextView.setCompoundDrawablesWithIntrinsicBounds(
                     drawable, null, null, null
                 )

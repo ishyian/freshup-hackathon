@@ -1,12 +1,13 @@
 package com.melitopolcherry.hackathon.data.model
 
+
 import com.google.gson.annotations.SerializedName
 
 data class Place(
     @SerializedName("address")
     val address: String,
-    @SerializedName("facultyId")
-    val facultyId: String,
+    @SerializedName("contacts")
+    val contacts: String,
     @SerializedName("image")
     val image: String,
     @SerializedName("latitude")
@@ -15,6 +16,8 @@ data class Place(
     val longitude: String,
     @SerializedName("name")
     val name: String,
+    @SerializedName("schedule")
+    val schedule: String,
     @SerializedName("type")
     val type: String
-) : Marker
+): Marker

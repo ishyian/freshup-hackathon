@@ -5,6 +5,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_marginBottom="@dimen/offset8"
+    android:paddingHorizontal="@dimen/offset8"
+    android:background="@drawable/category_rounded"
     android:layout_height="wrap_content">
 
     <androidx.appcompat.widget.AppCompatTextView
@@ -14,7 +16,7 @@
         android:layout_marginTop="@dimen/offset12"
         android:layout_marginBottom="@dimen/offset12"
         android:fontFamily="@font/sansation_regular"
-        android:textColor="@color/color_1"
+        android:textColor="@color/color_2"
         android:textSize="@dimen/text16"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@id/image_arrow"
@@ -31,11 +33,5 @@
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/ic_arrow_right" />
 
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:background="#5F5F5F"
-        android:alpha="0.5"
-        app:layout_constraintBottom_toBottomOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>
 

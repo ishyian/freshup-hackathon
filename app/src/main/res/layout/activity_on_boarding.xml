@@ -7,7 +7,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/window_background"
+        android:background="@drawable/onboarding_background"
         android:fitsSystemWindows="true"
         android:orientation="vertical"
         tools:context=".features.onboarding.OnBoardingActivity">
@@ -23,12 +23,12 @@
             android:id="@+id/textView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/offset50"
             android:layout_marginTop="@dimen/offset120"
             android:fontFamily="@font/sansation_bold"
-            android:text="Навчатися\nзручно"
-            android:textColor="@color/primary_text_color"
-            android:textSize="@dimen/text40"
+            android:text="@string/app_project_name"
+            android:textColor="@color/color_2"
+            android:textSize="@dimen/text30"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="@+id/appCompatImageView" />
 
@@ -36,30 +36,61 @@
             android:id="@+id/textView2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/offset50"
-            android:layout_marginTop="@dimen/offset16"
-            android:fontFamily="@font/sansation_regular"
-            android:text="Твій особистий путівник"
-            android:textColor="@color/color_2"
-            android:textSize="@dimen/text16"
+            android:layout_marginTop="12dp"
+            android:fontFamily="@font/montserrat"
+            android:text="З’єднуємо ваші потреби\nз можливостями допомоги"
+            android:textAlignment="center"
+            android:textColor="#626267"
+            android:textSize="@dimen/text14"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/textView" />
 
-        <com.google.android.material.button.MaterialButton
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/appCompatImageView2"
             android:layout_width="wrap_content"
-            android:id="@+id/btn_start"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/offset16"
-            android:backgroundTint="@color/color_4"
-            android:fontFamily="@font/sansation_regular"
-            android:text="Розпочати"
+            android:layout_marginTop="24dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView2"
+            app:srcCompat="@drawable/logo1" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_start"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/offset55"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="48dp"
+            android:layout_marginEnd="24dp"
+            android:backgroundTint="@color/color_2"
+            android:fontFamily="@font/montserrat_semibold"
+            android:text="Потребую допомоги"
             android:textAllCaps="false"
             android:textColor="@color/white"
             android:textSize="@dimen/text16"
-            app:cornerRadius="@dimen/offset8"
-            app:icon="@drawable/ic_arrow_right_alt_24"
-            app:layout_constraintStart_toStartOf="@+id/textView2"
-            app:layout_constraintTop_toBottomOf="@+id/textView2" />
+            app:cornerRadius="@dimen/offset50"
+            app:layout_constraintEnd_toEndOf="@+id/appCompatImageView"
+            app:layout_constraintStart_toStartOf="@+id/appCompatImageView"
+            app:layout_constraintTop_toBottomOf="@+id/appCompatImageView2" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_start2"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/offset55"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="24dp"
+            android:backgroundTint="@color/color_2"
+            android:fontFamily="@font/montserrat_semibold"
+            android:text="Хочу допомоги"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textSize="@dimen/text16"
+            app:cornerRadius="@dimen/offset50"
+            app:layout_constraintEnd_toEndOf="@+id/appCompatImageView"
+            app:layout_constraintStart_toStartOf="@+id/appCompatImageView"
+            app:layout_constraintTop_toBottomOf="@+id/btn_start" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

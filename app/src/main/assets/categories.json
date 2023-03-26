@@ -5,71 +5,44 @@
     "icon_name": "all",
     "short_name": "Всі",
     "value": "ALL",
-    "color": "#090A09",
+    "color": "#0A66BC",
     "type": "all"
   },
   {
     "id": "103",
-    "name": "Лекції",
-    "icon_name": "lectures",
-    "short_name": "Лекції",
-    "value": "LECTURES",
-    "color": "#452158",
-    "type": "lectures"
+    "name": "Штаб ВПО",
+    "icon_name": "shtab",
+    "short_name": "Штаб ВПО",
+    "value": "SHTAB",
+    "color": "#662222",
+    "type": "shtab"
   },
   {
     "id": "102",
-    "name": "Практика",
-    "icon_name": "practices",
-    "short_name": "Практика",
-    "value": "PRACTICES",
-    "color": "#704646",
-    "type": "practices"
+    "name": "Волонтери",
+    "icon_name": "volunteer",
+    "short_name": "Волонтери",
+    "value": "Volunteer",
+    "color": "#1877F2",
+    "type": "volunteer"
   },
   {
     "id": "106",
-    "name": "Лабораторна",
-    "icon_name": "laboratories",
-    "short_name": "Лабораторна",
-    "value": "LABORATORIES",
-    "color": "#0A66BC",
-    "type": "laboratories"
+    "name": "Укриття",
+    "icon_name": "shelter",
+    "short_name": "Укриття",
+    "value": "SHELTER",
+    "color": "#E30606",
+    "type": "shelter"
   },
   {
     "id": "104",
-    "name": "Гуртожиток",
-    "icon_name": "hostel",
-    "short_name": "Гуртожиток",
-    "value": "HOSTEL",
-    "color": "#F5A623",
-    "type": "hostel"
-  },
-  {
-    "id": "115",
-    "name": "Їдальня",
-    "icon_name": "diner",
-    "short_name": "Їдальня",
-    "value": "DINER",
-    "color": "#670AC3",
-    "type": "diner"
-  },
-  {
-    "id": "105",
-    "name": "Медпункт",
-    "icon_name": "hospital",
-    "short_name": "Медпункт",
-    "value": "HOSPITAL",
-    "color": "#E30606",
-    "type": "hospital"
-  },
-  {
-    "id": "106",
-    "name": "Спортзал",
-    "icon_name": "gym",
-    "short_name": "Спортзал",
-    "value": "GYM",
-    "color": "#0A66BC",
-    "type": "gym"
+    "name": "Пункт незламності",
+    "icon_name": "unbroken",
+    "short_name": "Пункт незламності",
+    "value": "UNBROKEN",
+    "color": "#760478",
+    "type": "unbroken"
   },
   {
     "id": "199",

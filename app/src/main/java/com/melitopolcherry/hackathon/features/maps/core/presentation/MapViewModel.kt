@@ -40,24 +40,13 @@ class MapViewModel @Inject constructor(
     val isLoading: MutableLiveData<Boolean> = MutableLiveData()
     val processError: MutableLiveData<Throwable> = MutableLiveData()
 
-    fun showMarkers(events: List<EventItem>, places: List<Place>, allowedTypes: List<String> = listOf()) {
+    fun showMarkers(places: List<Place>, allowedTypes: List<String> = listOf()) {
         viewModelScope.launch {
-            var eventsList = events.take(3)
-            if (allowedTypes.isNotEmpty()) {
-                eventsList = eventsList.filter { allowedTypes.contains(it.type) }
-            }
-            eventsList.forEach { eventItem ->
-                val faculty = FACULTIES.first { it.id == eventItem.facultyId }
-                eventItem.latitude = faculty.latitude
-                eventItem.longitude = faculty.longitude
-            }
-            val currentFacultyId = accountManager.fetchFaculty()?.facultyId
-            var placesList = places.filter { it.facultyId == currentFacultyId }
+            val markersList = arrayListOf<Marker>()
+            var placesList = places
             if (allowedTypes.isNotEmpty()) {
                 placesList = placesList.filter { allowedTypes.contains(it.type) }
             }
-            val markersList = arrayListOf<Marker>()
-            markersList.addAll(eventsList)
             markersList.addAll(placesList)
             Timber.d(markersList.size.toString())
             _markers.value = markersList

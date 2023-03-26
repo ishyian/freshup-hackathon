@@ -60,7 +60,7 @@
         <item name="android:navigationBarColor">#1c1c1c</item>
         <item name="android:statusBarColor">#1c1c1c</item>
         <item name="postSplashScreenTheme">@style/SplashScreenTheme</item>
-        <item name="android:windowSplashScreenBackground">@color/window_background</item>
+        <item name="android:windowSplashScreenBackground">@color/color_1</item>
         <item name="android:windowSplashScreenAnimationDuration">100</item>
         <item name="android:windowSplashScreenAnimatedIcon">@drawable/splash_screen_logo</item>
         <item name="android:windowSplashScreenIconBackgroundColor">#1c1c1c

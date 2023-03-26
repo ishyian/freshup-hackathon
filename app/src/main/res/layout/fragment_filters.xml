@@ -92,6 +92,7 @@
             android:foreground="@drawable/ripple_effect"
             android:gravity="center"
             android:src="@drawable/ic_calendar"
+            android:visibility="gone"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:tint="@color/text_primary"

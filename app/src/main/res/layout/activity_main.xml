@@ -37,7 +37,7 @@
             android:id="@id/navigation_tabs"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/window_background"
+            android:background="#E2E5EA"
             android:textSize="8sp"
             app:elevation="0dp"
             android:fitsSystemWindows="false"

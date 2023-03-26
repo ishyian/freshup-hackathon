@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="#FDF8EE"
+    android:background="@color/color_1"
     android:padding="@dimen/offset16">
 
     <androidx.appcompat.widget.AppCompatTextView
@@ -13,7 +13,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/sansation_regular"
-        android:textColor="@color/primary_text_color"
+        android:textColor="@color/color_2"
         android:textSize="@dimen/text12"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"

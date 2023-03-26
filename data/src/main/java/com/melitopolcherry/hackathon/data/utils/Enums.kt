@@ -60,13 +60,10 @@ abstract class Enums {
     }
 
     enum class EventCategories(val value: String) {
-        LECTURES("lectures"),
-        PRACTICES("practices"),
-        LABORATORIES("laboratories"),
-        HOSTEL("hostel"),
-        DINER("diner"),
-        HOSPITAL("hospital"),
-        GYM("gym");
+        SHELTERS("shelter"),
+        SHTAB("shtab"),
+        UNBROKEN("unbroken"),
+        VOLUNTEER("volunteer");
 
         companion object {
             fun categoryOf(value: String): String {
@@ -75,7 +72,7 @@ abstract class Enums {
                         return e.value
                     }
                 }
-                return LECTURES.value
+                return SHELTERS.value
             }
 
             fun getCategoryBy(value: String): EventCategories {
@@ -84,7 +81,7 @@ abstract class Enums {
                         return e
                     }
                 }
-                return LECTURES
+                return SHELTERS
             }
         }
     }

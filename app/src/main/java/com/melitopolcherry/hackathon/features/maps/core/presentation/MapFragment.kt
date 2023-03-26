@@ -135,6 +135,7 @@ class MapFragment : BaseFragment<FragmentMapBinding>(), Observer<List<Marker>>,
                         if (feature.getStringProperty(PROPERTY_TITLE) == title) {
                             val builder = AlertDialog.Builder(requireContext())
                             val binding = DialogPlaceBinding.inflate(LayoutInflater.from(context))
+                            Timber.d(feature.getStringProperty(PROPERTY_IMAGE))
                             Glide.with(requireContext()).load(feature.getStringProperty(PROPERTY_IMAGE))
                                 .into(binding.imagePlace)
                             binding.textAddress.text = feature.getStringProperty(PROPERTY_ADDRESS)
@@ -206,18 +207,16 @@ class MapFragment : BaseFragment<FragmentMapBinding>(), Observer<List<Marker>>,
 
         observe(viewModel.markersLiveData.getEvents()) {
             if (it.isNotEmpty()) {
-                viewModel.showMarkers(act.events, act.places, it)
+                viewModel.showMarkers(act.places, it)
             } else {
-                viewModel.showMarkers(act.events, act.places)
+                viewModel.showMarkers(act.places)
             }
         }
 
         binding.mapView.scalebar.enabled = false
         checkLocationPermissions()
-        updateLocation(LatLng(faculty.latitude, faculty.longitude))
-        addVenueMarker(faculty)
-
-        viewModel.showMarkers(act.events, act.places)
+        updateLocation(LatLng(48.459802466397605, 35.044124072768916))
+        viewModel.showMarkers(act.places)
     }
 
     private fun checkLocationPermissions() {
@@ -386,40 +385,6 @@ class MapFragment : BaseFragment<FragmentMapBinding>(), Observer<List<Marker>>,
 
         for (event in events) {
             when (event) {
-                is EventItem -> {
-                    val point = Point.fromLngLat(
-                        event.longitude,
-                        event.latitude
-                    )
-                    bounds.add(point)
-                    val feature =
-                        Feature.fromGeometry(point)
-                    if (!markerCoordinates.contains(feature)) {
-                        val faculty = FACULTIES.first { it.id == event.facultyId }
-                        val subtype = when (event.type) {
-                            "lectures" -> "Лекція"
-                            "practices" -> "Практика"
-                            else -> "Лабораторна"
-                        }
-                        feature.addStringProperty(PROPERTY_TITLE, event.subjectName)
-                        feature.addStringProperty(PROPERTY_ADDRESS, "${faculty.address}, аудиторія ${event.classroom}")
-                        feature.addStringProperty(PROPERTY_DATE, event.startDate)
-                        feature.addStringProperty(PROPERTY_END_DATE, event.endDate)
-                        feature.addStringProperty(PROPERTY_TYPE, "event")
-                        feature.addStringProperty(PROPERTY_SUBTYPE, subtype)
-                        feature.addStringProperty(PROPERTY_TEACHER_NAME, event.teacherName)
-                        feature.properties()?.addProperty(
-                            PROPERTY_CATEGORY,
-                            "icon_${event.type.lowercase()}"
-                        )
-                        feature.properties()?.addProperty(PROPERTY_PIN, "point")
-                        feature.properties()?.addProperty(PROPERTY_PIN_SELECTED, "point_selected")
-                        feature.properties()?.addProperty(PROPERTY_SELECTED, 0)
-
-                        markerCoordinates.add(feature)
-
-                    }
-                }
                 is Place -> {
                     val point = Point.fromLngLat(
                         event.longitude.toDouble(),
@@ -431,14 +396,14 @@ class MapFragment : BaseFragment<FragmentMapBinding>(), Observer<List<Marker>>,
                     if (!markerCoordinates.contains(feature)) {
                         feature.addStringProperty(PROPERTY_TITLE, event.name)
                         val subtype = when (event.type) {
-                            "hospital" -> "Медпункт"
-                            "hostel" -> "Гуртожиток"
-                            "gym" -> "Спортзал"
-                            "diner" -> "Їдальня"
+                            "shelter" -> "Укриття"
+                            "unbroken" -> "Пункт незламності"
+                            "shtab" -> "Штаб ВПО"
+                            "volunteer" -> "Волонтери"
                             else -> "Інше"
                         }
                         feature.addStringProperty(PROPERTY_TITLE, event.name)
-                        feature.addStringProperty(PROPERTY_ADDRESS, faculty.address)
+                        feature.addStringProperty(PROPERTY_ADDRESS, event.address)
                         feature.addStringProperty(PROPERTY_SUBTYPE, subtype)
                         feature.addStringProperty(PROPERTY_TYPE, "place")
                         feature.addStringProperty(PROPERTY_LATITUDE, event.latitude)
@@ -448,8 +413,6 @@ class MapFragment : BaseFragment<FragmentMapBinding>(), Observer<List<Marker>>,
                             PROPERTY_CATEGORY,
                             "icon_${event.type.lowercase()}"
                         )
-                        feature.properties()?.addProperty(PROPERTY_PIN, "point")
-                        feature.properties()?.addProperty(PROPERTY_PIN_SELECTED, "point_selected")
                         feature.properties()?.addProperty(PROPERTY_SELECTED, 0)
 
                         markerCoordinates.add(feature)
@@ -514,7 +477,7 @@ class MapFragment : BaseFragment<FragmentMapBinding>(), Observer<List<Marker>>,
                     animationSource?.featureCollection(collection)
                 }
                 setupIconLayer(style)
-                setupPinLayer(style)
+                //setupPinLayer(style)
                 try {
                     //setupAnimationLayer(style)
                 } catch (e: Throwable) {
@@ -686,16 +649,8 @@ class MapFragment : BaseFragment<FragmentMapBinding>(), Observer<List<Marker>>,
     private fun addToStyleIcons(style: Style) {
         Timber.d("📽 ICONS ADDED")
 
-        val iconNames = Enums.EventCategories.values().map { it.value }.plus("venue")
+        val iconNames = Enums.EventCategories.values().map { it.value }
         requireContext().let {
-            style.addImage(
-                "point",
-                ContextCompat.getDrawable(it, R.drawable.black_pin_bg)?.toBitmap()!!
-            )
-            style.addImage(
-                "point_selected",
-                ContextCompat.getDrawable(it, R.drawable.red_pin_bg)?.toBitmap()!!
-            )
             for (i in iconNames) {
                 val imageName = "pin_$i"
                 ContextCompat.getDrawable(
@@ -793,7 +748,7 @@ class MapFragment : BaseFragment<FragmentMapBinding>(), Observer<List<Marker>>,
         private const val PROPERTY_PIN = "point"
         private const val PROPERTY_CATEGORY_SELECTED = "category_selected"
         private const val PROPERTY_PIN_SELECTED = "point_selected"
-        private const val ZOOM_LEVEL = 17.0
+        private const val ZOOM_LEVEL = 10.0
 
         private const val DEFAULT_LATITUDE = 37.398160
         private const val DEFAULT_LONGITUDE = -122.180831

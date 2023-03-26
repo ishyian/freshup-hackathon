@@ -38,7 +38,7 @@
             android:theme="@style/AppTheme" />
 
         <activity
-            android:name=".screens.select_faculty.SelectFacultyActivity"
+            android:name=".screens.select_faculty.HumanitarianHelpActivity"
             android:theme="@style/AppTheme" />
 
         <activity

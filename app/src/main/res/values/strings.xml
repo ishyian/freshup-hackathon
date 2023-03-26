@@ -329,6 +329,8 @@
     <string name="show_less">Show less</string>
     <string name="select_university_title">Вітаємо в Uniflow!</string>
     <string name="select_university_subtitle">Будь ласка, обери свій університет зі списку</string>
-    <string name="navigation_events">Події</string>
+    <string name="navigation_events">Інформація</string>
     <string name="navigation_account">Акаунт</string>
+    <string name="app_project_name">ЯкВдома</string>
+    <string name="description">З <b>ЯкВдома</b> отримати та надавати підтримку стане зручніше</string>
 </resources>

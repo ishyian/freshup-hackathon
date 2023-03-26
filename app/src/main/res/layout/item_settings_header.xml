@@ -4,10 +4,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/text_title"
     android:layout_width="match_parent"
-    android:layout_marginTop="@dimen/offset16"
     android:layout_height="wrap_content"
+    android:layout_marginTop="@dimen/offset16"
+    android:layout_marginBottom="@dimen/offset8"
     android:fontFamily="@font/sansation_regular"
-    android:textColor="@color/color_2"
-    tools:text="Налаштування"
-    android:textSize="@dimen/text16" />
+    android:textColor="#898989"
+    android:textSize="@dimen/text16"
+    tools:text="Налаштування" />
 
